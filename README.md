@@ -12,6 +12,7 @@ Material icon : 아이콘 설정
 # vscode 단축키
 설정 : ctrl + ,    
 사이드바 삭제 : ctrl + b   
+줄복사 : alt + shift + 화살표
 
 
 # 수업 규칙
