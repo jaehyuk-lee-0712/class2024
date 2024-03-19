@@ -1,7 +1,7 @@
 # 오늘 수업
 [메인페이지](https://jaehyuk-lee-0712.github.io/class2024/)   
 
-[자바스크립트] (https://jaehyuk-lee-0712.github.io/class2024/javascript/index.html)
+[자바스크립트](https://jaehyuk-lee-0712.github.io/class2024/javascript/index.html)
 
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   
