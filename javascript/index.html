@@ -71,6 +71,8 @@
             nav {
                 ul {
                     display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
 
                     li {
                         a {
@@ -88,6 +90,11 @@
                                 border: 1px solid #a50751;
                                 background-color: #a50751;
                                 color: #fff;
+                            }
+
+                            @media (max-width: 800px) {
+                                font-size: 12px;
+
                             }
                         }
                     }
