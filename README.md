@@ -13,6 +13,8 @@ Material icon : 아이콘 설정
 설정 : ctrl + ,    
 사이드바 삭제 : ctrl + b   
 줄복사 : alt + shift + 화살표
+다중 선택 : alt + shift + 좌클릭
+다중 키워드 선택 : alt + D 
 
 
 # 수업 규칙
