@@ -142,6 +142,10 @@ body {
             color: #ffff;
             font-size: 11px;
         }
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 

@@ -3,6 +3,8 @@
 
 [자바스크립트](https://jaehyuk-lee-0712.github.io/class2024/javascript/index.html)
 
+[MySQL](https://jaehyuk-lee-0712.github.io/class2024/mysql/index.html)
+
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   
 ESLint : 문법 정렬 ( format onto save  check in setting )   
@@ -24,3 +26,8 @@ Material icon : 아이콘 설정
 
 # 벌칙
 자기소개(5분) --> 자기소개(10분) --> 노래 --> 춤 --> 수업 발표
+
+## 색상 조합 사이트
+[브랜드 색상 제너레이션](https://huemint.com/brand-intersection/)
+[scss -> css 변환사이트](https://www.sassmeister.com/)
+[각종 애니메이션 등, css 효과 모음 사이트](https://wsss.tistory.com/)
