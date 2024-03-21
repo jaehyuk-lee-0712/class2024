@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL02</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">MySQL</a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="mysql01.html">MySQL 기본</a>
+                </li>
+                <li>
+                    <a href="mysql02.html">SQL 개념</a>
+                </li>
+                <li class="active">
+                    <a href="mysql03.html">데이터베이스</a>
+                </li>
+                <li>
+                    <a href="mysql04.html">테이블</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header   -->
+
+    <body>
+
+
+        <main id="main">
+            <div class="main__sample container">
+                <div id="sample01" class="sample">
+                    <h3>DataBase 확인</h3>
+
+                    <div class="info">
+                        show databases;
+                    </div>
+                    <pre><code class="language-js">mysql> show databases; // 현재 생성되어있는 데이터베이스 확인.
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |    // 데이터베이스 목록.
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
+                </div>
+
+                <div id="sample02" class="sample">
+                    <h3>DataBase 생성</h3>
+                    <div class="info">
+                        create database 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> create database test; // test라는 이름의 DB 생성.
+Query OK, 1 row affected (0.00 sec) // DB 생성 완료
+
+mysql> show databases; 
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |    
+| performance_schema |
+| sys                |
+| test                |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+                </div>
+
+                <div id="sample03" class="sample">
+                    <h3>DataBase 삭제</h3>
+                    <div class="info">
+                        drop database 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> drop database test; // test라는 이름을 가진 DB를 삭제한다.
+Query OK, 0 row affected (0.00 sec) // DB 삭제 완료
+                        
+mysql> show databases; 
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |    
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+                </div>
+
+                <div id="sample04" class="sample">
+                    <h3>DataBase 사용</h3>
+                    <div class="info">
+                        use database 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> use test;
+DataBase changed // 결과</code></pre>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <a href="mailto:dlwogur0712@gmail.com">dlwogur0712@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="assets/js/prism.js"></script>
+    </body>
+
+</html>
