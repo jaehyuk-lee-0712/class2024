@@ -5,6 +5,8 @@
 
 [MySQL](https://jaehyuk-lee-0712.github.io/class2024/mysql/index.html)
 
+[Quiz](https://jaehyuk-lee-0712.github.io/class2024/quiz/index.html)
+
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   
 ESLint : 문법 정렬 ( format onto save  check in setting )   
