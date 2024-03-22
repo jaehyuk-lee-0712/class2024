@@ -243,7 +243,8 @@ li {
     font-size: 24px;
     font-family: var(--fontG);
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: 500;
+    margin-top: 50px;
 }
 
 .main__sample .sample p {
