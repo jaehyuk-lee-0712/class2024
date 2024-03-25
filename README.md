@@ -5,7 +5,15 @@
 
 [MySQL](https://jaehyuk-lee-0712.github.io/class2024/mysql/index.html)
 
-[Quiz](https://jaehyuk-lee-0712.github.io/class2024/quiz/index.html)
+
+## 퀴즈 게임
+[퀴즈게임](https://jaehyuk-lee-0712.github.io/class2024/quiz/index.html)
+
+[퀴즈01](https://jaehyuk-lee-0712.github.io/class2024/quiz/quiz01.html)
+- 변수
+- 선택자(querySelector)
+- 메서드(innerText(), classList , addEventListener())
+- 조건문 (if문)
 
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   
