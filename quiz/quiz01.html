@@ -46,7 +46,7 @@
                     <div class="desc none"></div>
                 </div>
                 <div class="quiz__footer">
-                    <button class="confirm">정답 확인하기</button>
+                    <button class="confirm">정답확인</button>
                 </div>
             </div>
         </div>
@@ -76,7 +76,6 @@
         document.querySelector(".quiz__main .answer").innerText = infoAnswer;
         document.querySelector(".quiz__main .desc").innerText = infoDesc;
 
-
         // 정답 확인하기.
         document.querySelector(".quiz__footer .confirm").addEventListener("click", function () {
             const userAnswer = document.querySelector(".quiz__main input").value; // 사용자가 쓴 정답.
@@ -85,6 +84,8 @@
             // 사용자 정답과 실제 정답 비교.
             if (infoAnswer == userAnswer) {
                 alert("정답!");
+            } else if (userAnswer == "" || userAnswer == null) {
+                alert("포기하지마! 맞서 싸워!");
             } else {
                 alert("공부하세요!")
             }
