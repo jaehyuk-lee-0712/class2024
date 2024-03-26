@@ -179,6 +179,15 @@ body::after {
     margin: 10px;
 }
 
+/* 개인 작업용 css 추가 */
+.quiz__wrap .quiz__template .quiz {
+    width: 500px;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
 .quiz__header {
     color: #696969;
     margin-bottom: 20px;
