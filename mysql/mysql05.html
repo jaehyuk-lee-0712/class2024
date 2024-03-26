@@ -31,6 +31,9 @@
                 <li class="active">
                     <a href="mysql05.html">SELECT</a>
                 </li>
+                <li>
+                    <a href="mysql06.html">ALTER</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,9 +45,9 @@
                 <h3>SELECT</h3>
                 <h4>전체 데이터 가져오기</h4>
                 <div class="info">
-                    SELECT * FROM members3;
+                    SELECT * FROM members;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3;
+                <pre><code class="language-js">mysql> SELECT * FROM members;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -67,9 +70,9 @@
 15 rows in set (0.00 sec)</code></pre>
                 <h4>이름 데이터만 가져오기</h4>
                 <div class="info">
-                    SELECT youName FROM members3;
+                    SELECT youName FROM members;
                 </div>
-                <pre><code class="language-js">mysql> SELECT youName FROM members3;
+                <pre><code class="language-js">mysql> SELECT youName FROM members;
 +---------+
 | youName |
 +---------+
@@ -94,9 +97,9 @@
 
                 <h4>이름 + 나이 데이터만 가져오기</h4>
                 <div class="info">
-                    SELECT youName , youAge FROM members3;
+                    SELECT youName , youAge FROM members;
                 </div>
-                <pre><code class="language-js"> SELECT youName , youAge FROM members3;
+                <pre><code class="language-js"> SELECT youName , youAge FROM members;
 +---------+--------+
 | youName | youAge |
 +---------+--------+
@@ -224,9 +227,9 @@
 
                 <h4>memberID가 1인 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID = 1;
+                    SELECT * FROM members WHERE memberID = 1;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID = 1;
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID = 1;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -236,9 +239,9 @@
 
                 <h4>memberID 가 10보다 큰 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID &gt; 10;
+                    SELECT * FROM members WHERE memberID &gt; 10;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID > 10;
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID > 10;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -252,9 +255,9 @@
 
                 <h4>memberID가 5보다 크고 10보다 작은 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID &gt; 5 and memberID &lt; 10;
+                    SELECT * FROM members WHERE memberID &gt; 5 and memberID &lt; 10;
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID > 5 and memberID < 10;
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID > 5 and memberID < 10;
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -267,9 +270,9 @@
 
                 <h4>memberID가 1,5,10인 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID IN (1,5,10);
+                    SELECT * FROM members WHERE memberID IN (1,5,10);
                 </div>
-                <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID IN (1,5,10);
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE memberID IN (1,5,10);
 +----------+---------+---------+--------+----------+------------+
 | memberID | youName | youPass | youAge | youBirth | regTime    |
 +----------+---------+---------+--------+----------+------------+
@@ -354,7 +357,7 @@
 +----------+---------+---------+--------+----------+------------+
 |       11 | 박소현  | 1234    |     29 |   960917 | 1231223123 |
 +----------+---------+---------+--------+----------+------------+
-1 rows in set (0.00 sec)</code></pre>
+1  rows in set (0.00 sec)</code></pre>
 
                 <h4>이름 중간에 '상' 텍스트가 포함된 이름 불러오기</h4>
                 <div class="info">
