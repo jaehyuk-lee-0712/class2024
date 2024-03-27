@@ -30,7 +30,7 @@
     <main id="main">
         <div class="quiz__wrap">
             <div id="quizTemplate">
-                <div class="quiz none" id="quizCopy">
+                <div class="quiz">
                     <div class="quiz__header">
                         <span class="date"></span>
                         <span class="type"></span>
@@ -106,131 +106,76 @@
             }
         ]
 
-
-
-
-
-
-
-
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        let checkCnt = 0; // 문제 index
 
-
-        // 문제 수 만큼 페이지에 문제 출력
-        for (let i = 0; i < quizInfo.length; i++) {
-            console.log("i : " + i)
-            // 문제 수 만큼 페이지 내에 quiz 생성
-            const quizTemplate = document.querySelector("#quizTemplate");
-            const quiz = quizTemplate.querySelector(".quiz");
-            const clone = quiz.cloneNode(true);
-            clone.setAttribute("id", "quiz" + i); // 복제된 quiz에 id 추가.
-            quizWrap.appendChild(clone);
-        }
-
-        const quizMain = quizWrap.querySelectorAll(".quiz");
-
-        for (let j = 0; j < quizMain.length; j++) {
-            const quizId = quizMain[j].getAttribute("id");
-            if (quizId == "quizCopy") {
-                console.log(j)
-                quizMain[j].remove();
-            }
-        }
-
-
-        console.log(quizMain);
-        const quizDate = quizWrap.querySelectorAll(".quiz__header .date");
-        const quizType = quizWrap.querySelectorAll(".quiz__header .type");
-        const quizNum = quizWrap.querySelectorAll(".question em");
-        const quizQuestion = quizWrap.querySelectorAll(".question span");
-        const quizInput = quizWrap.querySelectorAll(".input input")
-        const quizAnswer = quizWrap.querySelectorAll(".answer");
-        const quizDesc = quizWrap.querySelectorAll(".desc");
-        const quizConfirm = quizWrap.querySelectorAll(".confirm");
+        const quizDate = quizWrap.querySelector(".quiz__header .date");
+        const quizType = quizWrap.querySelector(".quiz__header .type");
+        const quizNum = quizWrap.querySelector(".question em");
+        const quizQuestion = quizWrap.querySelector(".question span");
+        const quizInput = quizWrap.querySelector(".input input")
+        const quizAnswer = quizWrap.querySelector(".answer");
+        const quizDesc = quizWrap.querySelector(".desc");
+        const quizConfirm = quizWrap.querySelector(".confirm");
+        const quizMain = quizWrap.querySelector(".quiz");
 
 
 
 
-        let checkCnt = 0;
 
 
+        const setConfirm = function () {
+            console.log("start setConfirm");
+            quizConfirm.addEventListener("click", function checkAnswer() {
+                const userAnswer = quizWrap.querySelector(".input input").value;
 
-        const viewQuiz = function () {
-            quizInfo.forEach(function (e, index) {
-                quizDate[index].textContent = e.infoDate;
-                quizType[index].textContent = e.infoType;
-                quizNum[index].textContent = index;
-                quizQuestion[index].textContent = e.infoQuestion;
-                quizAnswer[index].textContent = e.infoAnswer;
-                quizDesc[index].textContent = e.infoDesc;
+                if (userAnswer == quizInfo[checkCnt].infoAnswer) {
+                    alert("정답입니다.");
+                    quizAnswer.classList.remove("none");
+                    quizDesc.classList.remove("none");
 
-                // quizMain[index].classList.add("none");
+                    quizConfirm.innerText = "다음 문제."
+                    quizConfirm.removeEventListener("click", checkAnswer); // 기존 생성된 checkAnswer() 이벤트를 삭제.
 
-                // if (checkCnt == index) {
-                //     quizMain[index].classList.remove("none");
-                //     quizAnswer[index].classList.add("none");
-                //     quizDesc[index].classList.add("none");
-                // }
-            })
-        }
-
-        viewQuiz();
-
-        for (let i = 0; i < quizInfo.length; i++) {
-            quizDate[i].textContent = quizInfo[i].infoDate;
-            quizType[i].textContent = quizInfo[i].infoType;
-            quizNum[i].textContent = quizInfo[i].infoNum;
-            quizQuestion[i].textContent = quizInfo[i].infoQuestion;
-            quizAnswer[i].textContent = quizInfo[i].infoAnswer;
-            quizDesc[i].innerText = quizInfo[i].infoDesc;
-            // quizMain[i].classList.add("none");
-
-            // if (checkCnt == i) {
-            //     quizMain[i].classList.remove("none");
-            //     quizAnswer[i].classList.add("none");
-            //     quizDesc[i].classList.add("none");
-            // }
-
-        }
-
-        // quizInfo.forEach(function (e, i) {
-        //     console.log(i);
-        //     quizAnswer[i].classList.add("none");
-        //     quizDesc[i].classList.add("none");
-        // })
-
-
-
-        quizConfirm.forEach(function (btn, i) {
-            btn.addEventListener("click", function () {
-                const userAnswer = quizInput[i].value;
-                const correctAnswer = quizInfo[i].infoAnswer
-
-                if (userAnswer == correctAnswer) {
-                    console.log(quizInfo[i].infoDesc);
-                    quizAnswer[i].classList.remove("none");
-                    quizDesc[i].classList.remove("none");
-                    btn.textContent = "다음 문제";
-
-                    btn.removeEventListener("click", this);
-
-                    btn.addEventListener("click", function () {
+                    quizConfirm.addEventListener("click", function nextQuiz() {
                         checkCnt++;
-                        viewQuiz();
-                    });
-                } else {
-                    alert("땡!");
+                        quizConfirm.innerText = "정답 확인";
+                        quizView();
+                        quizConfirm.removeEventListener("click", nextQuiz);
+                    })
                 }
+
             })
-        })
+        }
 
 
+        const quizView = function () {
 
+            if (checkCnt < quizInfo.length) {
+                quizDate.textContent = quizInfo[checkCnt].infoDate;
+                quizType.textContent = quizInfo[checkCnt].infoType;
+                quizNum.textContent = quizInfo[checkCnt].infoNum;
+                quizQuestion.textContent = quizInfo[checkCnt].infoQuestion;
+                quizAnswer.textContent = quizInfo[checkCnt].infoAnswer;
+                quizDesc.innerText = quizInfo[checkCnt].infoDesc;
 
+                quizWrap.querySelector(".input input").value = "";
 
+                quizAnswer.classList.add("none");
+                quizDesc.classList.add("none");
 
+                setConfirm();
 
+            } else {
+                alert("모든 문제를 푸셨습니다.");
+                quizConfirm.innerText = "끝!"
+                quizConfirm.setAttribute("disabled", "disabled");
+            }
+
+        }
+
+        quizView();
     </script>
 </body>
 
