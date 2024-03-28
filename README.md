@@ -12,8 +12,15 @@
 [퀴즈01](https://jaehyuk-lee-0712.github.io/class2024/quiz/quiz01.html)
 - 변수
 - 선택자(querySelector)
-- 메서드(innerText(), classList , addEventListener())
+- 메서드(innerText(), classList.remove , addEventListener())
 - 조건문 (if문)
+
+[퀴즈02](https://jaehyuk-lee-0712.github.io/class2024/quiz/quiz01.html)
+- 배열, 객체
+- 선택자(querySelectorAll)
+- 반복문(for(), forEach())
+- 메서드(innerHTML(), classList.add , addEventListener())
+
 
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   
@@ -41,3 +48,5 @@ Material icon : 아이콘 설정
 [브랜드 색상 제너레이션](https://huemint.com/brand-intersection/)
 [scss -> css 변환사이트](https://www.sassmeister.com/)
 [각종 애니메이션 등, css 효과 모음 사이트](https://wsss.tistory.com/)
+[각종 애니메이션 등, css 효과 모음 사이트2](https://wiss.tistory.com/)
+[폰트 모음 사이트(폰트 어썸)](https://wess.tistory.com/)
