@@ -55,17 +55,21 @@
                 <li><a href="#">12, 배열 : 데이터 저장(여러개) : 표현방법 8 : 배열펼심연산자</a></li>
 
 
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
-                <li><a href="#">06, 객체 : 데이터 저장(키와 값): 표현방법</a></li>
+                <li><a href="#">13, 객체 : 데이터 저장(키와 값): 표현방법 1 : 객체 선언 후 배열 방식으로 데이터 입력</a></li>
+                <li><a href="#">14, 객체 : 데이터 저장(키와 값): 표현방법 2 : 객체 선언 후 객체방식으로 데이터 입력</a></li>
+                <li><a href="#">15, 객체 : 데이터 저장(키와 값): 표현방법 3 : 리터럴 방식으로 데이터 선언</a></li>
+                <li><a href="#">16, 객체 : 데이터 저장(키와 값): 표현방법 4 : 리터럴 방식으로 객체 선언과 동시에 초깃값 설정</a></li>
+                <li><a href="#">17, 객체 : 데이터 저장(키와 값): 표현방법 5 : 배열안에 객체가 있는 방식</a></li>
+                <li><a href="#">18, 객체 : 데이터 저장(키와 값): 표현방법 6 : 객체안에 배열이 있는 방식</a></li>
+                <li><a href="#">19, 객체 : 데이터 저장(키와 값): 표현방법 7 : 객체안에 객체가 있는 방식</a></li>
+                <li><a href="#">20, 객체 : 데이터 저장(키와 값): 표현방법 8 : 객체안에 함수가 있는 방식 </a></li>
+                <li><a href="#">21, 객체 : 데이터 저장(키와 값): 표현방법 9 : 객체구조분해할당</a></li>
+                <li><a href="#">22, 객체 : 데이터 저장(키와 값): 표현방법 10 : 객체펼침연산자</a></li>
+
+                <li><a href="#">23, 파일 : 데이터 교환(JSON)</a></li>
+                <li><a href="">++ 연산자</a></li> <!--월요일 숙제-->
+                <li><a href="">++ 자료형</a></li> <!--화요일 숙제-->
+
 
             </ul>
         </div>
@@ -791,7 +795,85 @@
                     </details>
                 </div>
             </div>
-            <!-- sample 19 -->
+            <!-- sample 21 -->
+
+            <div id="sample23" class="sample">
+                <h3>객체 : 데이터 저장(키와 값) : 표현 방법 10 : 객체펼침연산자</h3>
+                <p>
+                    객체 구조 분해 할당(Object Destructuring Assignment)은 자바스크립트에서 객체의 속성을 추출하여 변수에 할당하는 방법입니다. <br>
+                    이 기능을 사용하면 객체의 속성을 개별적인 변수로 쉽게 추출할 수 있습니다.
+                </p>
+                <pre><code>{
+    const obj1 = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+    }
+    const obj2 = {
+    ...obj1,
+    d: "jquery"
+    }
+    const obj3 = {
+    ...obj1,
+    ...obj2
+    }
+
+    console.log("22. 객체 : 표현방법10");
+    console.log(obj1);
+    console.log(obj2);
+    console.log(obj2.a);
+    console.log(obj2.b);
+    console.log(obj2.c);
+    console.log(obj2.d);
+    console.log(obj3);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200 <br>
+                            300 <br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample 22 -->
+
+            <div id="sample23" class="sample">
+                <h3>파일 : 데이터 교환 (JSON) </h3>
+                <p>
+
+                </p>
+                <pre><code>{
+    // 01 JSON 데이터 --&gt; 객체 변환
+    const jsonString = '{"name" : "Lee" , "age" : 30 }';
+    const jsonObject = JSON.parse(jsonString);
+
+    console.log(jsonObject.name);
+}
+
+{
+    // 01 객체 변환 --&gt; JSON  데이터
+    const person = {
+        name: "Lee",
+        age: 30
+    }
+    const jsonString = JSON.stringify(person);
+    console.log(jsonString);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            Lee<br>
+                            {"name":"Lee","age":30}
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample 22 -->
 
 
 
@@ -990,8 +1072,25 @@
             console.log(obj2.c);
             console.log(obj2.d);
             console.log(obj3);
+        }
 
+        //23. 파일 : 데이터 교환 (JSON)
+        {
+            // 01. JSON 데이터 --> 객체 변환
 
+            const jsonString = '{"name" : "Lee" , "age" : 30 }';
+            const jsonObject = JSON.parse(jsonString);
+
+            console.log(jsonObject.name);
+        }
+        // 02, 객체 파일 --> JSON 데이터
+        {
+            const person = {
+                name: "Lee",
+                age: 30
+            }
+            const jsonString = JSON.stringify(person);
+            console.log(jsonString);
         }
 
 
