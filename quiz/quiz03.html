@@ -51,8 +51,8 @@
                             <span></span>
                         </label>
                     </div>
-                    <div class="answer "></div>
-                    <div class="desc "></div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답확인</button>
@@ -74,7 +74,8 @@
             const quizMain = quizWrap.querySelector(".quiz");
             const quizHeader = quizWrap.querySelector(".quiz__header");
             const quizQuestion = quizWrap.querySelector(".question");
-            const quizChoices = quizWrap.querySelector("quiz__main .choices");
+            const quizChoices = quizWrap.querySelectorAll(".quiz__main .choices span");
+            const quizSelects = quizWrap.querySelectorAll(".quiz__main .choices input");
             const quizAnswer = quizWrap.querySelector(".answer");
             const quizDesc = quizWrap.querySelector(".desc");
             const quizConfirm = quizWrap.querySelector(".confirm");
@@ -94,7 +95,39 @@
 
             quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
             quizQuestion.innerHTML = "<em>" + quizInfo.num + "</em>." + "<span>" + quizInfo.question + "</span>";
+            quizAnswer.innerHTML = quizInfo.answer;
+            quizDesc.innerHTML = quizInfo.desc;
 
+            for (let i = 0; i < quizInfo.choices.length; i++) {
+                quizChoices[i].innerHTML = quizInfo.choices[i];
+            }
+
+            // 정답 체크
+            quizConfirm.addEventListener("click", () => {
+
+                let selectedChoise = null;
+
+                // 보기 클릭시 
+                for (let i = 0; i < quizInfo.choices.length; i++) {
+                    if (quizSelects[i].checked) {
+                        selectedChoise = quizSelects[i].value;
+                        break;
+
+                    }
+                }
+
+                // 정답 확인.
+                if (selectedChoise !== null) {
+                    if (selectedChoise == quizInfo.answer) {
+                        alert("정답입니다.")
+                        quizDesc.classList.remove("none");
+                    } else {
+                        quizAnswer.classList.remove("none");
+                        quizDesc.classList.remove("none");
+                        alert("틀렸습니다.")
+                    }
+                }
+            });
 
 
         }

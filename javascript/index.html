@@ -45,59 +45,52 @@
             border: 8px solid #a50751;
             border-radius: 15px;
             position: relative;
+        }
 
-            &::before {
-                content: '';
-                border: 8px solid #ee0f6c;
-                width: calc(100% - 16px);
-                height: calc(100% - 16px);
-                position: absolute;
-                border-radius: 8px;
-                left: 0;
-                top: 0;
-                z-index: -1;
-            }
+        main::before {
+            content: "";
+            border: 8px solid #ee0f6c;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            position: absolute;
+            border-radius: 8px;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
 
-            h1 {
-                font-size: 5vw;
-                margin-bottom: 3vh;
-                margin-top: 1vh;
+        main h1 {
+            font-size: 5vw;
+            margin-bottom: 3vh;
+            margin-top: 1vh;
+        }
 
-                a {
-                    color: #a50751;
-                }
-            }
+        main h1 a {
+            color: #a50751;
+        }
 
-            nav {
-                ul {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
+        main nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-                    li {
-                        a {
-                            display: inline-block;
-                            font-size: 16px;
-                            font-family: "nanumSquareNeo";
-                            border: 1px dashed #7e0a3a;
-                            padding: 10px 20px;
-                            margin: 2px;
-                            color: #7e0a3a;
-                            background-color: #fff;
-                            transition: all 0.3s;
+        main nav ul li a {
+            display: inline-block;
+            font-size: 16px;
+            font-family: "nanumSquareNeo";
+            border: 1px dashed #7e0a3a;
+            padding: 10px 20px;
+            margin: 2px;
+            color: #7e0a3a;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
 
-                            &:hover {
-                                border: 1px solid #a50751;
-                                background-color: #a50751;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-            }
-
-
-
+        main nav ul li a:hover {
+            border: 1px solid #a50751;
+            background-color: #a50751;
+            color: #fff;
         }
 
         body .wrap {

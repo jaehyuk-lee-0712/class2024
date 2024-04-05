@@ -21,6 +21,20 @@
 - 반복문(for(), forEach())
 - 메서드(innerHTML(), classList.add , addEventListener())
 
+[퀴즈03](https://jaehyuk-lee-0712.github.io/class2024/quiz/quiz03.html)
+-변수, 배열, 객체
+-선택자 (querySelector() ,querySelectorAll() )
+-반복문 (for, breake)
+-메서드(innerHTML(), classList.add , addEventListener())
+
+
+[퀴즈04](https://jaehyuk-lee-0712.github.io/class2024/quiz/quiz04.html)
+-변수, 배열, 객체, 템플릿 리터럴
+-선택자 (querySelector() ,querySelectorAll() )
+-반복문 (forEach())
+-메서드(join, innerHTML(), push())
+
+
 
 # vscode  확장 프로그램
 Live Server : 웹 페이지 미리보기   

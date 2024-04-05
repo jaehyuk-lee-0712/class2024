@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        #aside {
+            width: 200px;
+            height: calc(100vh - 120px);
+            background-color: #ada48afa;
+        }
+
+        #aside .logo_top {
+            width: 100%;
+            height: 10%;
+            background-color: #0455be;
+        }
+
+        #main {
+            width: 400px;
+            height: calc(100vh - 120px);
+            display: block;
+        }
+
+        #banner {
+            width: 100%;
+            height: 10%;
+            background-color: #0400ff;
+        }
+
+        #notice {
+            width: 100%;
+            height: 40%;
+            background-color: #0603c4;
+        }
+
+        #gallery {
+            width: 100%;
+            height: 40%;
+            background-color: #3f3d91;
+        }
+
+        #link {
+            width: 100%;
+            height: 10%;
+            background-color: #46466e;
+        }
+
+        #main2 {
+            width: calc(100% - 600px);
+            height: calc(100vh - 120px);
+            background-color: #7bff00;
+        }
+
+        #footer {
+            width: 100%;
+            height: 120px;
+            display: flex;
+        }
+
+        #logo {
+            width: 200px;
+            background-color: #f700ff;
+        }
+
+        #bottom_contents {
+            width: calc(100% - 200px);
+            display: block
+        }
+
+        #bContent1 {
+            width: 100%;
+            height: 50%;
+            background-color: #00a2ff;
+        }
+
+        #bContent2 {
+            width: 100%;
+            height: 50%;
+            background-color: #095a8a;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <div class="logo_top"></div>
+            <div class="menu"></div>
+        </aside>
+        <main id="main">
+            <div id="banner"></div>
+            <div id="notice"></div>
+            <div id="gallery"></div>
+            <div id="link"></div>
+        </main>
+        <main id="main2"></main>
+        <footer id="footer">
+            <div id="logo"></div>
+            <div id="bottom_contents">
+                <div id="bContent1"></div>
+                <div id="bContent2"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

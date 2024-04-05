@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1000px;
+            height: 650px;
+            display: flex;
+        }
+
+        #side {
+            width: 25%;
+            height: 650px;
+            display: block;
+        }
+
+        #side .logo {
+            width: 100%;
+            height: 25%;
+            background-color: #b37777;
+        }
+
+        #side .menu {
+            width: 100%;
+            height: 75%;
+            background-color: #3fc93a25;
+        }
+
+        #main {
+            width: 75%;
+            display: block;
+
+        }
+
+        #main .slide {
+            height: 45%;
+            background-color: #0051ff25;
+        }
+
+        #main .container {
+            height: 35%;
+            display: flex;
+        }
+
+        .container .notice {
+            width: 33.333%;
+            background-color: rgba(184, 118, 32, 0.145)
+        }
+
+        .container .banner {
+            width: 33.333%;
+            background-color: rgba(126, 82, 24, 0.145)
+        }
+
+        .container .sitemap {
+            width: 33.333%;
+            background-color: rgba(167, 166, 165, 0.145)
+        }
+
+        #main .bottom {
+            height: 20%;
+            display: flex;
+        }
+
+        .bottom .footer_logo {
+            width: 20%;
+            background-color: #fd02f125;
+        }
+
+        .bottom .footer_menu {
+            width: 60%;
+            background-color: #e6090925;
+        }
+
+        .bottom .footer_menu2 {
+            width: 20%;
+            background-color: #eba2e725;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="side">
+            <div class="logo"></div>
+            <div class="menu"></div>
+        </div>
+        <div id="main">
+            <div class="slide"></div>
+            <div class="container">
+                <div class="notice"></div>
+                <div class="banner"></div>
+                <div class="sitemap"></div>
+            </div>
+            <div class="bottom">
+                <div class="footer_logo"></div>
+                <div class="footer_menu"></div>
+                <div class="footer_menu2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

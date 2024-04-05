@@ -30,6 +30,30 @@
                     <a href="javascript04.html">데이터 제어하기</a>
                 </li>
             </ul>
+            <ul>
+                <li>
+                    <a href="object1.html">문자열 객체</a>
+                </li>
+                <li>
+                    <a href="object2.html">배열 객체</a>
+                </li>
+                <li>
+                    <a href="object3.html">수학 객체</a>
+                </li>
+                <li>
+                    <a href="object4.html">숫자 객체</a>
+                </li>
+                <li>
+                    <a href="object5.html">브라우저 객체</a>
+                </li>
+                <li>
+                    <a href="object6.html">요소 객체</a>
+                </li>
+                <li>
+                    <a href="object7.html">이벤트 객체</a>
+                </li>
+            </ul>
+
         </nav>
     </header>
     <!-- //header   -->
@@ -67,7 +91,7 @@
                 <li><a href="#">22, 객체 : 데이터 저장(키와 값): 표현방법 10 : 객체펼침연산자</a></li>
 
                 <li><a href="#">23, 파일 : 데이터 교환(JSON)</a></li>
-                <li><a href="">++ 연산자</a></li> <!--월요일 숙제-->
+                <li><a href="">24 연산자</a></li> <!--월요일 숙제-->
                 <li><a href="">++ 자료형</a></li> <!--화요일 숙제-->
 
 
@@ -797,8 +821,8 @@
             </div>
             <!-- sample 21 -->
 
-            <div id="sample23" class="sample">
-                <h3>객체 : 데이터 저장(키와 값) : 표현 방법 10 : 객체펼침연산자</h3>
+            <div id="sample22" class="sample">
+                <h3>22. 객체 : 데이터 저장(키와 값) : 표현 방법 10 : 객체펼침연산자</h3>
                 <p>
                     객체 구조 분해 할당(Object Destructuring Assignment)은 자바스크립트에서 객체의 속성을 추출하여 변수에 할당하는 방법입니다. <br>
                     이 기능을 사용하면 객체의 속성을 개별적인 변수로 쉽게 추출할 수 있습니다.
@@ -842,7 +866,7 @@
             <!-- sample 22 -->
 
             <div id="sample23" class="sample">
-                <h3>파일 : 데이터 교환 (JSON) </h3>
+                <h3>23. 파일 : 데이터 교환 (JSON) </h3>
                 <p>
 
                 </p>
@@ -873,7 +897,101 @@
                     </details>
                 </div>
             </div>
-            <!-- sample 22 -->
+            <!-- sample 23 -->
+
+            <div id="sample24" class="sample">
+                <h3>24. 연산자 </h3>
+                <p>
+                    자바스크립트에서 사용되는 다양한 연산자들이 있습니다. <br>
+                    이러한 연산자들은 변수, 상수, 값 등을 조작하고 계산하는 데 사용됩니다.
+                </p>
+                <div class="info">산술 연산자 + : 덧셈 , - : 뺄셈 , * : 곱셈 , / : 나눗셈 , % : 나머지</div>
+                <pre><code>{
+    let a = 10;
+    let b = 5;
+
+    let sum = a + b; // 덧셈
+    let difference = a - b; // 뺄셈
+    let product = a * b; // 곱셈
+    let quotient = a / b; // 나눗셈
+    let remainder = a % b; // 나머지
+
+    console.log("Sum:", sum); // Sum: 15
+    console.log("Difference:", difference); // Difference: 5
+    console.log("Product:", product); // Product: 50
+    console.log("Quotient:", quotient); // Quotient: 2
+    console.log("Remainder:", remainder); // Remainder: 0
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            Sum : 15<br>
+                            Difference : 5 <br>
+                            Product: 50 <br>
+                            Quotient: 2 <br>
+                            Remainder: 0
+                        </div>
+                    </details>
+                </div>
+                <div class="info">할당 연산자:
+
+                    =: 변수에 값을 할당
+                    +=, -=, *=, /=, %= 등: 산술 연산과 함께 사용되며 결과를 변수에 할당</div>
+                <pre><code>{
+    let x = 10;
+
+    x += 5; // x = x + 5
+    console.log("x:", x); // x: 15
+    
+    x -= 3; // x = x - 3
+    console.log("x:", x); // x: 12
+    
+    x *= 2; // x = x * 2
+    console.log("x:", x); // x: 24
+    
+    x /= 4; // x = x / 4
+    console.log("x:", x); // x: 6
+    
+    x %= 4; // x = x % 4
+    console.log("x:", x); // x: 2
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            x: 15<br>
+                            x: 12<br>
+                            x: 24<br>
+                            x: 6<br>
+                            x: 2
+                        </div>
+                    </details>
+                </div>
+                <div class="info">논리 연산자:
+                    &&: 논리 AND
+                    ||: 논리 OR
+                    !: 논리 NOT</div>
+                <pre><code>{
+    let sunny = true;
+    let warm = false;
+    
+    console.log(sunny && warm); // false (AND 연산)
+    console.log(sunny || warm); // true (OR 연산)
+    console.log(!sunny); // false (NOT 연산)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            false <br>
+                            true <br>
+                            false
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- sample 23 -->
 
 
 

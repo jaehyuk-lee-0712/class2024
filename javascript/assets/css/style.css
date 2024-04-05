@@ -1,4 +1,6 @@
 /* 웹폰트 설정 */
+@import url("https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css");
+
 @font-face {
     font-family: "GmarketSans";
     font-weight: 300;
@@ -131,6 +133,12 @@ li {
     margin: 0 auto;
 }
 
+@media (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+}
+
 /* 헤더 영역 */
 #header {
     text-align: center;
@@ -185,6 +193,7 @@ li {
     border-bottom: 1px dashed #8a1968;
 }
 
+
 .main__menu ul li a {
     color: #8a1968;
     line-height: 1.7;
@@ -222,6 +231,15 @@ li {
     font-family: var(--fontN);
     line-height: 1.5;
     color: #666;
+}
+
+.main__samples .sample .info {
+    padding: 20px;
+    background-color: #f4f8fa;
+    border-left: 3px solid #31b3db;
+    font-family: var(--fontN);
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* 푸터 */
