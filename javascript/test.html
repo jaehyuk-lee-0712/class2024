@@ -4,197 +4,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문자열 객체</title>
+    <title>마음대로</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/prism.css">
+        #wrap {
+            width: 100%;
+            overflow: auto;
+        }
+
+        #header {
+            width: 100%;
+            background-color: #eee;
+        }
+
+        #header .container .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #b83e3e;
+        }
+
+        #header .container .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #6b1515;
+        }
+
+        #slider {
+            width: 100%;
+            height: 300px;
+        }
+
+        #slider .container {
+            background-color: #ce8080;
+        }
+
+        #main {
+            width: 100%;
+            height: 200px;
+            background-color: #6b3232;
+        }
+
+        #main .container .container1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #946f6f;
+        }
+
+        #main .container .container2 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #c03c3c;
+        }
+
+        #main .container .container3 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #e21414;
+        }
+
+        #notice {
+            width: 100%;
+            height: 200px;
+        }
+
+        #notice .container .notice1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #b68383;
+        }
+
+        #notice .container .notice2 {
+            width: calc(100% - 33.333%);
+        }
+
+        #notice .container .notice2 .notice2-1 {
+            width: 100%;
+            height: 100px;
+            background-color: #b13e3e;
+        }
+
+        #notice .container .notice2 .notice2-2 {
+            width: 100%;
+            height: 100px;
+            background-color: #e4a3a3;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #a53434;
+        }
+
+        #footer .container .footer1 {
+            width: 10%;
+            height: 100px;
+            background-color: #d6c1c1;
+        }
+
+        #footer .container .footer2 {
+            width: 90%;
+        }
+
+        #footer .container .footer2 .footer2-1 {
+            width: 100%;
+            height: 50px;
+            background-color: #df7d7d;
+        }
+
+        #footer .container .footer2 .footer2-2 {
+            width: 100%;
+            height: 50px;
+            background-color: #a73b3b;
+        }
+
+        .container {
+            width: 1200px;
+            display: flex;
+            height: inherit;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+    </style>
 </head>
 
 <body>
-    <header id="header">
-        <h1>
-            <a href="index.html">javascript</a>
-        </h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="javascript01.html">데이터 저장하기</a>
-                </li>
-                <li>
-                    <a href="javascript02.html">데이터 불러오기</a>
-                </li>
-                <li>
-                    <a href="javascript03.html">데이터 실행하기</a>
-                </li>
-                <li>
-                    <a href="javascript04.html">데이터 제어하기</a>
-                </li>
-            </ul>
-            <ul>
-                <li class="active">
-                    <a href="object1.html">문자열 객체</a>
-                </li>
-                <li>
-                    <a href="object2.html">배열 객체</a>
-                </li>
-                <li>
-                    <a href="object3.html">수학 객체</a>
-                </li>
-                <li>
-                    <a href="object4.html">숫자 객체</a>
-                </li>
-                <li>
-                    <a href="object5.html">브라우저 객체</a>
-                </li>
-                <li>
-                    <a href="object6.html">요소 객체</a>
-                </li>
-                <li>
-                    <a href="object7.html">이벤트 객체</a>
-                </li>
-                <li>
-                    <a href="test.html">테스트</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <!-- //header   -->
-    <main id="main">
-        <div class="main__menu container">
-        </div>
-        <!-- //main__menu -->
-
-        <div class="main__samples container">
-            <div id="sample01" class="sample">
-                <h3>1. for(), while(), do while()문으로 1부터 100까지</h3>
-                <p>
-                    반복문을 사용해 1부터 100까지 출력합니다.
-                </p>
-                <pre data-line="9-10, 15" class="line-numbers"><code class="language-js"> {
-    for (let i = 1; i &gt;= 100; i++) {
-        console.log(i)
-    }
-
-    let num = 1;
-
-    while (num &gt;= 100) {
-        console.log(num);
-        num++;
-    }
-
-    let num2 = 1;
-
-    do {
-        console.log(num2);
-        num2++;
-    } while (num2 &gt;= 100)
-}</code></pre>
-                <div class="result">
-                    <details>
-                        <summary>결과 확인하기</summary>
-                        <div>
-                        </div>
-                    </details>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <!-- header -->
+        <article id="slider">
+            <div class="container"></div>
+        </article>
+        <!-- slider -->
+        <main id="main">
+            <div class="container">
+                <div class="container1"></div>
+                <div class="container2"></div>
+                <div class="container3"></div>
+            </div>
+        </main>
+        <!-- main -->
+        <section id="notice">
+            <div class="container">
+                <div class="notice1"></div>
+                <div class="notice2">
+                    <div class="notice2-1"></div>
+                    <div class="notice2-2"></div>
                 </div>
             </div>
-            <!-- sample 01 -->
-
-            <div id="sample02" class="sample">
-                <h3>2. 0부터 100까지 짝수만 출력하기</h3>
-                <p>
-                    for()문과 if()문을 사용합니다.
-                </p>
-                <pre data-line="9-10, 15" class="line-numbers"><code class="language-js"> {
-    for (let i = 0; i &gt;= 100; i++) {
-        if (i % 2 == 0) {
-            console.log(i);
-        }
-    }
-}
-</code></pre>
-                <div class="result">
-                    <details>
-                        <summary>결과 확인하기</summary>
-                        <div>
-                        </div>
-                    </details>
+        </section>
+        <!-- notice -->
+        <footer id="footer">
+            <div class="container">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
                 </div>
             </div>
-            <!-- sample 02 -->
-
-            <div id="sample03" class="sample">
-                <h3>3. 1부터 100까지 짝수는 파란색 홀수는 빨간색 출력하지</h3>
-                <p>
-                    for()문과 if()문을 사용합니다.
-                </p>
-                <pre data-line="9-10, 15" class="line-numbers"><code class="language-js"> {
-    for (let i = 0; i &gt;= 100; i++) {
-        if (i % 2 == 0) {
-            console.log(i);
-        }
-    }
-}
-</code></pre>
-                <div class="result">
-                    <details>
-                        <summary>결과 확인하기</summary>
-                        <div>
-                        </div>
-                    </details>
-                </div>
-            </div>
-            <!-- sample 03 -->
-
-            <div id="sample04" class="sample">
-                <h3>4. 중첩 for()문으로 구구단 만들기</h3>
-                <p>
-                    for()문과 if()문을 사용합니다.
-                </p>
-                <pre data-line="9-10, 15" class="line-numbers"><code class="language-js">
-{
-    for (let i = 2; i &gt;= 9; i++) {
-        for (let j = 1; j &gt;= 9; j++) {
-            console.log(i + "*" + j + " = " + i * j);
-        }
-    }
-}
-
-</code></pre>
-                <div class="result">
-                    <details>
-                        <summary>결과 확인하기</summary>
-                        <div>
-                        </div>
-                    </details>
-                </div>
-            </div>
-            <!-- sample 04 -->
-
-        </div>
-
-        <!-- //main_sample -->
-    </main>
-    <!-- //main -->
-
-    <footer id="footer">
-
-    </footer>
-    <!-- //footer -->
-
-    <script src="assets/js/prism.js"></script>
+        </footer>
+        <!-- footer -->
+    </div>
     <script>
         {
-            for (let i = 2; i <= 9; i++) {
-                for (let j = 1; j <= 9; j++) {
-                    if (i == 8) {
-                        console.log(i + "*" + j + " = " + i * j);
-                    }
+            const arr1 = [100, 200, "javascript"];
+            const arr2 = [300, 400, "jquery"];
 
-                }
-            }
+            console.log(arr1);
+            console.log(...arr1);
+            console.log(arr1 + arr2);
         }
-
-
     </script>
 </body>
 

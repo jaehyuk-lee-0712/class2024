@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 03</title>
-
-    <link rel="stylesheet" href="assest/css/quizcss.css">
+    <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
 <body>
@@ -25,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <!-- //header -->
+    <!-- header -->
 
     <main id="main">
         <div class="quiz__wrap">
@@ -55,84 +54,82 @@
                     <div class="desc none"></div>
                 </div>
                 <div class="quiz__footer">
-                    <button class="confirm">정답확인</button>
+                    <button class="confirm">정답 확인하기</button>
                 </div>
             </div>
         </div>
     </main>
-    <!-- //main -->
+    <!-- main -->
 
     <footer id="footer">
-        <a href="mailto:dlwogur0712@gmail.com">dlwogur0712@gmail.com</a>
+        <a href="mailto:fdcwrt@gmail.com">fdcwrt@gmail.com</a>
     </footer>
-    <!-- //footer -->
-
+    <!-- footer -->
 
     <script>
-        {
-            const quizWrap = document.querySelector(".quiz__wrap");
-            const quizMain = quizWrap.querySelector(".quiz");
-            const quizHeader = quizWrap.querySelector(".quiz__header");
-            const quizQuestion = quizWrap.querySelector(".question");
-            const quizChoices = quizWrap.querySelectorAll(".quiz__main .choices span");
-            const quizSelects = quizWrap.querySelectorAll(".quiz__main .choices input");
-            const quizAnswer = quizWrap.querySelector(".answer");
-            const quizDesc = quizWrap.querySelector(".desc");
-            const quizConfirm = quizWrap.querySelector(".confirm");
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizHeader = quizWrap.querySelector(".quiz__header");
+        const quizQuestion = quizWrap.querySelector(".quiz__main .question");
+        const quizAnswer = quizWrap.querySelector(".quiz__main .answer");
+        const quizDesc = quizWrap.querySelector(".quiz__main .desc");
+        const quizConfirm = quizWrap.querySelector(".quiz__footer .confirm");
+        const quizChoices = quizWrap.querySelectorAll(".quiz__main .choices span");
+        const quizSelects = quizWrap.querySelectorAll(".quiz__main .choices input");
 
-
-            const quizInfo = {
-
-                date: "2021년 1회",
-                type: "정보처리기능사",
-                num: "01",
-                question: "입출력 조작의 시간과 중앙처리장치의 처리시간과의 불균형을 보완하는 것은?",
-                choices: ["선, 색채, 공간, 수량", "점, 선, 면, 질감", "시간, 수량, 구조, 공간", "면, 구조, 공간, 수량"],
-                answer: "2",
-                desc: "채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완 합니다."
-
-            }
-
-            quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
-            quizQuestion.innerHTML = "<em>" + quizInfo.num + "</em>." + "<span>" + quizInfo.question + "</span>";
-            quizAnswer.innerHTML = quizInfo.answer;
-            quizDesc.innerHTML = quizInfo.desc;
-
-            for (let i = 0; i < quizInfo.choices.length; i++) {
-                quizChoices[i].innerHTML = quizInfo.choices[i];
-            }
-
-            // 정답 체크
-            quizConfirm.addEventListener("click", () => {
-
-                let selectedChoise = null;
-
-                // 보기 클릭시 
-                for (let i = 0; i < quizInfo.choices.length; i++) {
-                    if (quizSelects[i].checked) {
-                        selectedChoise = quizSelects[i].value;
-                        break;
-
-                    }
-                }
-
-                // 정답 확인.
-                if (selectedChoise !== null) {
-                    if (selectedChoise == quizInfo.answer) {
-                        alert("정답입니다.")
-                        quizDesc.classList.remove("none");
-                    } else {
-                        quizAnswer.classList.remove("none");
-                        quizDesc.classList.remove("none");
-                        alert("틀렸습니다.")
-                    }
-                }
-            });
-
-
+        // 문제 정보
+        const quizInfo = {
+            date: "2021년 1회",
+            type: "정보처리기능사",
+            num: "01",
+            question: "입출력 조작의 시간과 중앙처리장치의 처리시간과의 불균형을 보완하는 것은?",
+            answer: "1",
+            choices: ["채널장치", "제어장치", "터미널장치", "콘솔장치"],
+            desc: "채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완 합니다.",
         }
-    </script>
 
+        // 문제 출력
+        quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
+        quizQuestion.innerHTML = quizInfo.num + ". " + quizInfo.question;
+        quizAnswer.innerHTML = quizInfo.answer;
+        quizDesc.innerHTML = quizInfo.desc;
+
+        for (let i = 0; i < quizChoices.length; i++) {
+            quizChoices[i].innerHTML = quizInfo.choices[i];
+        }
+
+        // quizInfo.choices.forEach((e, i) => {
+        //     quizChoices[i].innerHTML = quizInfo.choices[i];
+        // })
+
+        // 정답확인
+        // 버튼 클릭
+        quizConfirm.addEventListener("click", () => {
+            let selectedChoice = null;
+
+            // 보기 선택
+            for (let i = 0; i < quizSelects.length; i++) {
+                if (quizSelects[i].checked) {
+                    selectedChoice = quizSelects[i].value;
+                    break;
+                }
+            }
+
+            // 정답 확인
+            if (selectedChoice !== null) {
+                if (selectedChoice == quizInfo.answer) {
+                    alert("정답입니다.");
+                    quizDesc.classList.remove("none");
+                } else {
+                    alert("오답입니다.");
+                    quizAnswer.classList.remove("none");
+                    quizDesc.classList.remove("none");
+                }
+            } else {
+                alert("정답을 선택해주세요.");
+            }
+        });
+    </script>
 </body>
 
 </html>

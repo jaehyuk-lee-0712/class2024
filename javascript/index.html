@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트</title>
+
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <link href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
             padding: 0;
             font-family: "GmarketSans";
             box-sizing: border-box;
-            /* border 값 높이, 넓이에 미포함 */
         }
 
         a {
@@ -35,71 +34,67 @@
             width: 100%;
             height: 100vh;
             display: flex;
-            /* dp */
             align-items: center;
-            /* aic */
             justify-content: center;
-            /* jcc  중앙 정렬*/
             flex-direction: column;
-            /* 세로 정렬 */
-            border: 8px solid #a50751;
-            border-radius: 15px;
+            border: 8px solid #003494;
+            border-radius: 20px;
             position: relative;
         }
 
         main::before {
             content: "";
-            border: 8px solid #ee0f6c;
+            border: 8px solid #638fe2;
             width: calc(100% - 16px);
             height: calc(100% - 16px);
             position: absolute;
-            border-radius: 8px;
             left: 0;
             top: 0;
+            border-radius: 12px;
             z-index: -1;
         }
 
         main h1 {
             font-size: 5vw;
-            margin-bottom: 3vh;
-            margin-top: 1vh;
+            margin-bottom: 3vw;
+            margin-top: 1vw;
         }
 
         main h1 a {
-            color: #a50751;
+            color: #003494;
         }
 
         main nav ul {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         main nav ul li a {
             display: inline-block;
             font-size: 16px;
             font-family: "nanumSquareNeo";
-            border: 1px dashed #7e0a3a;
+            border: 1px dashed #003494;
             padding: 10px 20px;
             margin: 2px;
-            color: #7e0a3a;
+            color: #003494;
             background-color: #fff;
             transition: all 0.3s;
         }
 
         main nav ul li a:hover {
-            border: 1px solid #a50751;
-            background-color: #a50751;
+            border: 1px solid #003494;
+            background-color: #003494;
             color: #fff;
         }
 
         body .wrap {
             width: 300px;
             height: 300px;
-            background: #a50751;
+            background: #003494;
             position: relative;
-            box-shadow: 0 -10px 0 0 #a50751;
-            border-radius: 50%;
+            box-shadow: 0 -10px 0 0 #638fe2;
+            border-radius: 50px;
         }
 
         body .body {
@@ -225,7 +220,7 @@
             width: 20%;
             height: 100%;
             top: 20px;
-            background: #252510;
+            background: #101d25;
             border-radius: 0 20% 100% 0;
             transform: translateZ(2px);
         }
@@ -257,7 +252,7 @@
 
         body .body .head .inner .spot {
             position: absolute;
-            background: #252510;
+            background: #101425;
             width: 100px;
             height: 110px;
             border-radius: 100%;
@@ -270,8 +265,8 @@
             position: absolute;
             width: 65px;
             height: 100px;
-            background: #131308;
-            box-shadow: inset -5px 0 0 15px #252510;
+            background: #101425;
+            box-shadow: inset -5px 0 0 15px #101d25;
             top: -50px;
             z-index: -5;
             left: -10px;
@@ -286,7 +281,7 @@
             position: absolute;
             width: 50px;
             height: 55px;
-            background: #252510;
+            background: #101425;
             z-index: -1;
             transform: translateZ(-3px) rotate(-20deg);
             border-radius: 0 0 100% 100%;
@@ -335,7 +330,7 @@
             position: absolute;
             width: 100%;
             height: 50%;
-            background: #252510;
+            background: #101425;
             top: 0;
             left: 0;
             transform: translateY(-120%);
@@ -549,9 +544,8 @@
                     </filter>
                 </defs>
             </svg>
-
         </div>
-        <!-- dog -->
+        <!-- //dog -->
 
         <h1>
             <a href="index.html">javascript</a>
@@ -565,6 +559,7 @@
             </ul>
         </nav>
     </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script>
@@ -682,6 +677,7 @@
                     ease: Expo.easeOut,
                     overwrite: 'all'
                 });
+
             TweenMax.to(
                 $leftpaw,
                 1,
@@ -692,6 +688,7 @@
                     ease: Expo.easeOut,
                     overwrite: 'all'
                 });
+
             TweenMax.to(
                 $rightpaw,
                 1,
@@ -702,8 +699,6 @@
                     ease: Expo.easeOut,
                     overwrite: 'all'
                 });
-
-
         });
     </script>
 </body>

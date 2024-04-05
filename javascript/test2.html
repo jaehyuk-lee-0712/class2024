@@ -1,151 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>test1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+            overflow: auto;
+            background-color: #dad9cf;
+        }
+
+        #header {
+            width: 100%;
+        }
+
+        #header .container .logo {
+            height: 100px;
+            background-color: #bdb23a;
+        }
+
+        #header .container .nav {
+            height: 100px;
+            background-color: #d1c96f;
+        }
+
+        #main {
+            width: 100%;
+        }
+
+        #main .container {
+            display: flex;
+        }
+
+        #main .container .slider1 {
+            width: 25%;
+            height: 600px;
+            background-color: #68600f;
+        }
+
+        #main .container .slider2 {
+            width: 50%;
+            height: 600px;
+        }
+
+        #main .container .slider2 .slider2-1 {
+            width: 100%;
+            height: 300px;
+            background-color: #e4d63d;
+        }
+
+        #main .container .slider2 .slider2-2 {
+            width: 100%;
+            height: 300px;
+            background-color: #f5e109;
+        }
+
+        #main .container .slider3 {
+            width: 25%;
+            height: 600px;
+            background-color: #e4da69;
+        }
+
+        #footer {
+            height: 100px;
+        }
+
+        #footer .container {
+            background-color: #dbcf46;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
-
-    <script>
-        // 01 선언적 함수
-        {
-            function test() {
-                console.log("Test1");
-            }
-
-            test()
-        }
-
-        // 02 익명 함수
-        {
-            const test = function () {
-                console.log("Test2");
-            }
-            test();
-        }
-
-        // 03 매개변수 함수
-        {
-            function test(str) {
-                console.log(str);
-            }
-            test("test3");
-        }
-        //04 리턴값 함수
-        {
-            function test() {
-                return "test4"
-            }
-            console.log(test())
-        }
-
-        // 05 매개변수 +_ 리턴값 함수
-        {
-            function test(str) {
-                return str
-            }
-            console.log(test("test05"));
-        }
-
-        // 06 화살표 함수 : 선언적 함수
-        {
-            test = () => {
-                console.log("Test6");
-            }
-
-            test()
-        }
-
-        // 07 화살표 함수 : 익명 함수
-        {
-            const test = () => {
-                console.log("Test7");
-            }
-
-            test()
-        }
-
-        // 08 화살표 함수 : 매개변수 함수
-        {
-            test = (str) => {
-                console.log(str);
-            }
-
-            test("Test08");
-        }
-
-
-        // 09 화살표 함수 : 리턴값
-        {
-            test = () => {
-                return "09 리턴값"
-            }
-
-            console.log(test());
-        }
-
-        // 10 화살표 함수 : 리턴값 + 매개변수
-        {
-            test = (str) => {
-                return str
-            }
-
-            console.log(test("10 test"));
-        }
-
-        //11 for
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            console.log("11")
-            for (let i = 0; i < arr.length; i++) {
-                console.log(arr[i])
-            }
-        }
-
-        // 12 
-
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            console.log("12")
-            arr.forEach(element => {
-                console.log(element)
-            });
-        }
-
-        //13 for
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            console.log("13")
-            for (let i of arr) {
-                console.log(i)
-            }
-        }
-
-        //143 for
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            console.log("14")
-            for (let i in arr) {
-                console.log(arr[i])
-            }
-        }
-
-        //15 for
-        {
-            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-            console.log("15")
-            arr.map(function (e) {
-                console.log(e);
-            })
-        }
-
-
-
-
-    </script>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </div>
+        </header>
+        <main id="main">
+            <div class="container">
+                <article class="slider1"></article>
+                <article class="slider2">
+                    <div class="slider2-1"></div>
+                    <div class="slider2-2"></div>
+                </article>
+                <article class="slider3"></article>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
 </body>
 
 </html>
