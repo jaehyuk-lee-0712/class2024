@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'AndongWolyeonggyo';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/andong/AndongWolyeonggyo.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/andong/AndongWolyeonggyo.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/andong/AndongWolyeonggyo.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/andong/AndongWolyeonggyo.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/andong/AndongWolyeonggyo.ttf') format("truetype");
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "AndongWolyeonggyo";
+    box-sizing: border-box;
+}
+
+#main {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#wrap {
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid #000;
+    /* outline: 1px solid red; */
+}
+
+#header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+#leftQuiz {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #d2d2d2;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px 0;
+    padding-left: 15px;
+}
+
+#totalQuiz {
+    min-width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #d2d2d2;
+    font-weight: 300;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+#quiz {
+    width: 100%;
+    height: 80%;
+
+}
+
+#question {
+    width: 100%;
+    height: 55%;
+
+}
+
+#confirm {
+    width: 100%;
+    height: 45%;
+
+}
+
+#footer {
+    width: 100%;
+    height: 10%;
+
+}
+
+#progress-bar {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    background-color: #3b575e;
+    border-radius: 10px;
+    animation: progress-animation 60s linear forwards;
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}

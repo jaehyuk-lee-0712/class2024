@@ -1,0 +1,28 @@
+@import url("reset");
+@import url("adsfasdf");
+#faa #fxa {
+  color: #ffffff;
+}
+#faa #fxa .cls {
+  color: aqua;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#faa #fxa .cls:hover {
+  color: aquamarine;
+}
+#faa #fxa .cls::before {
+  color: red;
+}
+#faa #fxa .cls::after {
+  color: green;
+}
+#faa::after {
+  color: beige;
+}/*# sourceMappingURL=aaaa.css.map */
