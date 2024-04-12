@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 애니메이션</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .pencil {
+            width: 150px;
+            position: relative;
+        }
+
+        .pencil path {
+            fill: #f00;
+            transition: fill 0.5s ease;
+        }
+
+        .pencil:hover path {
+            fill: #000;
+        }
+
+        .pencil .lead {
+            fill: #777;
+            transition: fill 0.5s ease;
+        }
+
+        .pencil:hover .lead {
+            fill: #333;
+        }
+
+        .pencil .eraser {
+            fill: #ddd;
+            transition: fill 0.5s ease;
+        }
+
+        .pencil:hover .eraser {
+            fill: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <svg class="pencil" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 0 L50 120 L100 160 L100 0 Z" />
+        <circle class="lead" cx="100" cy="160" r="5" />
+        <path class="eraser" d="M50 0 L50 120 L0 160 L0 0 Z" />
+    </svg>
+</body>
+
+</html>

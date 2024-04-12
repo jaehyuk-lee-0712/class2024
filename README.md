@@ -66,3 +66,5 @@ Material icon : 아이콘 설정
 [폰트 모음 사이트(폰트 어썸)](https://wess.tistory.com/)
 [https://docs.emmet.io/cheat-sheet/](https://docs.emmet.io/cheat-sheet/)
 [linear-gradient](https://webzz.tistory.com/380)
+[웹폰트변환사이트](https://transfonter.org/)
+[미리캔버스_디자인_참고](https://www.miricanvas.com/)

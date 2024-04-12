@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M-2</title>
+    <title>Test-1</title>
 
     <style>
         * {
@@ -102,12 +102,9 @@
         /* nav */
 
         .nav>ul {
-
             display: flex;
             justify-content: right;
             margin-top: 30px;
-            margin-left: auto;
-            width: fit-content;
         }
 
         .nav>ul>li {
@@ -219,30 +216,29 @@
     <script>
         // $(function () {
         //     $(".nav > ul > li").mouseover(function () {
-        //         $(".nav > ul > li > ul").stop().slideDown();
+        //         $(this).find(".submenu").stop().slideDown();
         //     })
 
         //     $(".nav > ul > li").mouseout(function () {
-        //         $(".nav > ul > li > ul").stop().slideUp();
+        //         $(this).find(".submenu").stop().slideUp();
         //     })
         // })
     </script>
+
     <script>
         window.onload = function () {
-            const navList = document.querySelector(".nav > ul");
-            navList.addEventListener("mouseover", function () {
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "158px";
-                })
-            })
+            const navList = document.querySelectorAll(".nav > ul > li");
 
-            navList.addEventListener("mouseout", function () {
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
+            navList.forEach(function (navItem) {
+                navItem.addEventListener("mouseover", function () {
+                    this.querySelector(".submenu").style.height = "158px";
+                })
+
+                navItem.addEventListener("mouseout", function () {
+                    this.querySelector(".submenu").style.height = "0px";
                 })
             })
         }
     </script>
-</body>
 
 </html>
