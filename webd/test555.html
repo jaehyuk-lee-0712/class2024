@@ -7,182 +7,255 @@
     <title>Document</title>
     <style>
         * {
-            margin: 0;
             padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 100%;
         }
 
         #header {
-            background-color: aqua;
-            width: 100%;
+            width: 1340px;
             height: 100px;
-        }
-
-        #h_container {
-            background-color: rgb(0, 255, 0);
-            width: 1200px;
-            height: 100%;
             margin: 0 auto;
             display: flex;
+            position: relative;
+            z-index: 1000;
         }
 
-        #head1 {
-            width: 30%;
+        #logo {
+            width: 20%;
             height: 100%;
-            background-color: aquamarine;
+            background-color: #f02626;
         }
 
-        #head2 {
-            width: 70%;
+        #nav {
+            width: 80%;
             height: 100%;
-            background-color: rgb(8, 160, 109);
-        }
-
-        #main {
-            margin: 0 auto;
-            width: 1200px;
-            height: 200px;
-            background-color: black;
-        }
-
-        #main2 {
-            width: 100%;
-            background-color: brown;
+            background-color: #2bff00;
             display: flex;
+            justify-content: right;
         }
 
-        #main_container {
-            width: 1200px;
-            margin: 0 auto;
-            height: 200px;
+        #nav>ul {
             display: flex;
+            margin-top: 60px;
         }
 
-        #mm1 {
-            width: 33.333%;
-            height: 100%;
+        #nav>ul>li {}
+
+        #nav>ul>li>a {
+            display: inline-block;
+            padding: 10px 50px;
             background-color: #dedede;
         }
 
-        #mm2 {
-            width: 33.333%;
-            height: 100%;
-            background-color: #3da78c;
+        #nav>ul>li>ul {
+            display: none;
         }
 
-        #mm3 {
-            width: 33.333%;
-            height: 100%;
-            background-color: #1f742d;
+        #nav>ul>li>ul>li {
+            text-align: center;
+        }
+
+        #nav>ul>li>ul>li>a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            width: 100%;
         }
 
 
-        #main_container2 {
-            width: 1200px;
-            height: 200px;
+        #content {
+            width: 100%;
+            height: 350px;
             margin: 0 auto;
-            background-color: #4d0e38;
+            background-color: #a9a9a9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #content_1 {
+            width: 1340px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: #809e48;
+        }
+
+        #slider {
+            width: 1340px;
+            height: 400px;
+            background-color: #eee;
+            margin: 0 auto;
             display: flex;
         }
 
-        #ma1 {
-            width: 40%;
-            height: 100%;
-            background-color: #af0f7a;
-        }
-
-        #ma2 {
-            width: 60%;
-            height: 100%;
-            background-color: #b99fb0;
-        }
-
-        #mb1 {
+        #silderWrap {
+            position: relative;
             width: 100%;
-            height: 50%;
-            background-color: #eeff00;
+            height: 100%;
+            margin: 0 auto;
         }
 
-        #mb2 {
+        #silderWrap .slider {
+            position: absolute;
             width: 100%;
-            height: 50%;
-            background-color: #00ff15;
+            height: 100%;
         }
 
         #footer {
-            width: 100%;
-            height: 100px;
-            background-color: #00b7ff;
-        }
-
-        #foot_container {
-            width: 1200px;
+            width: 1340px;
+            height: 120px;
+            background-color: #e9e9e9;
             margin: 0 auto;
-            height: 100px;
-            background-color: #00ffd5;
             display: flex;
         }
 
-        #fa1 {
-            width: 30%;
-            height: 100%;
-            background-color: #054402;
+        #f_content1 {
+            width: 80%;
+            height: 100px;
+            background-color: #00ff95;
         }
 
-        #fa2 {
-            width: 70%;
-            height: 100%;
-            background-color: #0cc203;
+        #f_content2 {
+            width: 20%;
+            height: 100px;
+            background-color: #187c53;
         }
 
-        #fb1 {
+        #sns {
             width: 100%;
             height: 50%;
-            background-color: #001aff;
+            background-color: #1900ff;
         }
 
-        #fb1 {
+        #familySite {
             width: 100%;
             height: 50%;
-            background-color: #ff7300;
+            background-color: #9e96e6;
         }
     </style>
 </head>
 
 <body>
-    <div id="header">
-        <div id="h_container">
-            <div id="head1"></div>
-            <div id="head2"></div>
+    <div id="wrap">
+        <div id="header">
+            <div id="logo"></div>
+            <div id="nav">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#">MENU 1</a>
+                            <ul>
+                                <li><a href="#">SUBMENU 1</a></li>
+                                <li><a href="#">SUBMENU 2</a></li>
+                                <li><a href="#">SUBMENU 3</a></li>
+                                <li><a href="#">SUBMENU 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU 2</a>
+                            <ul>
+                                <li><a href="#">SUBMENU 1</a></li>
+                                <li><a href="#">SUBMENU 2</a></li>
+                                <li><a href="#">SUBMENU 3</a></li>
+                                <li><a href="#">SUBMENU 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU 3</a>
+                            <ul>
+                                <li><a href="#">SUBMENU 1</a></li>
+                                <li><a href="#">SUBMENU 2</a></li>
+                                <li><a href="#">SUBMENU 3</a></li>
+                                <li><a href="#">SUBMENU 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU 4</a>
+                            <ul>
+                                <li><a href="#">SUBMENU 1</a></li>
+                                <li><a href="#">SUBMENU 2</a></li>
+                                <li><a href="#">SUBMENU 3</a></li>
+                                <li><a href="#">SUBMENU 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
-    <div id="main">
+        <div id="content">
 
-    </div>
-    <div id="main2">
-        <div id="main_container">
-            <div id="mm1"></div>
-            <div id="mm2"></div>
-            <div id="mm3"></div>
+            <div id="silderWrap">
+                <div class="slider s1">
+                    <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider01.jpg" alt="이미지1"
+                        style="width: 100%; height: 100%;">
+                </div>
+                <div class="slider s2">
+                    <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider02.jpg" alt="이미지2"
+                        style="width: 100%; height: 100%;">
+                </div>
+                <div class="slider s3">
+                    <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider03.jpg" alt="이미지3"
+                        style="width: 100%; height: 100%;">
+                </div>
+
+            </div>
+            <div id="content_1"></div>
         </div>
-    </div>
-    <div id="main3">
-        <div id="main_container2">
-            <div id="ma1"></div>
-            <div id="ma2">
-                <div id="mb1"></div>
-                <div id="mb2"></div>
+        <div id="slider">
+
+        </div>
+        <div id="footer">
+            <div id="f_content1"></div>
+            <div id="f_content2">
+                <div id="sns"></div>
+                <div id="familySite"></div>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <div id="foot_container">
-            <div id="fa1"></div>
-            <div id="fa2">
-                <div id="fb1"></div>
-                <div id="fb2"></div>
-            </div>
-        </div>
-    </div>
+    <script>
+        window.onload = function () {
+            let picIdx = 0;
+            const slider = document.querySelectorAll("#silderWrap .slider");
+
+            setInterval(function () {
+                let nextIdx = (picIdx + 1) % slider.length;
+                // opacity
+                slider[picIdx].style.opacity = 0;
+                slider[nextIdx].style.opacity = 1;
+
+                picIdx = nextIdx;
+
+            }, 1000)
+
+            let navList = document.querySelectorAll("#nav>ul>li");
+            navList.forEach(sub => {
+                sub.addEventListener("mouseover", function () {
+                    sub.querySelector("#nav>ul>li>ul");
+                    sub.querySelector("#nav>ul>li>ul").style.display = "block"
+                })
+            })
+
+            navList.forEach(sub => {
+                sub.addEventListener("mouseout", function () {
+                    sub.querySelector("#nav>ul>li>ul");
+                    sub.querySelector("#nav>ul>li>ul").style.display = "none"
+                })
+            })
+        }
+    </script>
 </body>
 
 </html>
