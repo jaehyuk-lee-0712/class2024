@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>정보처리기능사 주관식 100</title>
     <link rel="stylesheet" href="assest/css/quizE01.css">
 </head>
 
@@ -13,47 +12,36 @@
     <div id="quiz__wrap">
         <div class="quiz__start">
             <div class="title">
-                <span>2024.01.20.FRI</span>
+                <span></span>
             </div>
             <div class="text">
                 <span><i>100문제</i> <strong>주관식</strong> 실기 기출문제</span>
-                <h1>정보처리기능사 <br>실기주관식</h1>
+                <h1>정보처리기능사<br>실기주관식</h1>
                 <ul>
                     <li>정보처리기능사 실기 단답형 100문제입니다.</li>
-                    <li>통과 점수는 90점이며 시간 제한은 30분입니다.</li>
+                    <li>통과 점수는 90점이며, 시간제한은 30분입니다.</li>
                 </ul>
             </div>
-            <div class="btn">
+            <div class="start__btn">
                 <button>시작하기</button>
             </div>
         </div>
         <!-- //quiz__start -->
 
         <div class="quiz__play none">
-            <span class="number">01/100</span>
-            <div class="question">
-                웹과 비동기적 데이터 교환 및 조작을 위해 사용되며,
-                XLMHttpRequest 객체를 이용하여 웹 페이지의 일부만을 수정할 수 있는 것은 무엇인가?
-            </div>
-            <div class="answer">
-                <input type="text" placeholder="정답을 입력하세요">
-            </div>
-            <div class="confirm">
-                <button>확인하기</button>
-                <button class="">다음문제</button>
-            </div>
         </div>
-        <!-- // quiz__play -->
-        <div class="quiz__finish none"></div>
+        <!-- //quiz__play -->
+
+        <div class="quiz__finish none">
+        </div>
         <!-- //quiz__finish -->
+
         <div class="quiz__bg">
             <svg id="canvas"></svg>
         </div>
     </div>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- <script type="module">
-        import { SVG } from "https://cdn.skypack.dev/@svgdotjs/svg.js@3.1.1";
+    <script type="module">import { SVG } from "https://cdn.skypack.dev/@svgdotjs/svg.js@3.1.1";
         import SimplexNoise from "https://cdn.skypack.dev/simplex-noise@3.0.1";
         import {
             random,
@@ -465,18 +453,196 @@
 
             return blobWrapper.path(spline(points, 1, true)).fill("#000");
         }
-
-    </script> -->
-
-    <script>
-        $(function () {
-            const startBtn = $(".quiz__start .btn button")
-            startBtn.click(function () {
-
-            })
-        })
     </script>
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector("#quiz__wrap");
+        const quizStart = quizWrap.querySelector(".quiz__start");
+        const startBtn = quizStart.querySelector(".start__btn");
+        const quizPlay = quizWrap.querySelector(".quiz__play");
+        const quizEnd = quizWrap.querySelector(".quiz__finish");
+        const dayTitle = quizWrap.querySelector(".title span")
 
+        // 문제 정보
+        let quizinfo = [];
+
+        // 변수
+        let currentIndex = 0;
+        let userAnswernum = 0;
+        let resultAnswer = [];
+        let quizArray = [];
+        let dubm = 0;
+
+        // 날짜 정보
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const date = String(today.getDate()).padStart(2, '0');
+
+        // 요일을 가져오기 위한 배열
+        const weekdays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+        const dayOfWeek = weekdays[today.getDay()];
+
+        // 형식에 맞춘 후 title에 출력.
+        const formattedDate = `${year}.${month}.${date}.${dayOfWeek}`;
+        dayTitle.innerHTML = formattedDate;
+
+        const compareWithoutSpaces = (str1, str2) => {
+            const formattedStr1 = str1.replace(/\s+/g, '').toLowerCase();
+            const formattedStr2 = str2.replace(/\s+/g, '').toLowerCase();
+
+            // 두 문자열 비교
+            return formattedStr1 === formattedStr2;
+        };
+
+        // 문제 가져오기
+        const fetchQuiz = async () => {
+            try {
+                // 외부 JSON 파일에서 퀴즈 데이터 가져오기
+                const response = await fetch("https://seodaewon1.github.io/class2024/quiz/assets/json/Gineungsa.json");
+                const items = await response.json();
+
+                // 가져온 데이터를 가공하여 quizinfo 배열에 저장
+                quizinfo = items.map((item, idx) => {
+                    const formattedQuiz = {
+                        question: item.question,
+                        answer: item.correct_answer,
+                        Desc: item.question_desc || '',
+                    };
+                    return formattedQuiz;
+                })
+
+
+
+                updateQuiz(currentIndex);
+            } catch (error) {
+                console.error('에러 발생:', error);
+            }
+        };
+
+
+
+        // 결과 출력
+        const quizend = () => {
+            quizArray.push(`<div class="totalResults">   
+                <h2>결과 확인</h2>
+                <div class="result">맞힌 갯수 : ${userAnswernum} / ${quizinfo.length} </br>틀린 갯수 : ${quizinfo.length - userAnswernum}</div>
+            </div>
+            <div class="finish__btn">
+                <button class="next_page">다음 페이지</button>
+            </div>
+            `)
+            for (let i = 0; i < 2; i++) {
+                if (compareWithoutSpaces(resultAnswer[i].toLowerCase(), quizinfo[i].answer.toLowerCase())) {
+                    quizArray.push(`
+                    <div class="quizsresult good">
+                        <div class="quiz__main">
+                            <div class="question">${i + 1}. ${quizinfo[i].question}<br><br>${quizinfo[dubm].Desc}</div>
+                            <div class="Re">입력한 답 : ${resultAnswer[i]}</div>
+                            <div class="answer">${quizinfo[i].answer}</div>
+                        </div>
+                    </div>
+                    `);
+                } else {
+                    quizArray.push(`
+                    <div class="quizsresult bad">
+                        <div class="quiz__main">
+                            <div class="question">${i + 1}. ${quizinfo[i].question}<br><br>${quizinfo[i].Desc}</div>
+                            <div class="Re">입력한 답 : ${resultAnswer[i]}</div>
+                            <div class="answer">${quizinfo[i].answer}</div>
+                        </div>
+                    </div>
+                    `);
+                }
+                i++;
+            };
+
+            quizEnd.innerHTML = quizArray.join('');
+            // 선택자
+            const next_page_Btn = quizEnd.querySelector(".finish__btn");
+            next_page_Btn.addEventListener("click", () => {
+                quizArray = [];
+                quizend();
+                if (dubm >= quizinfo.length) {
+                    alert("마지막 페이집입니다.");
+                }
+            })
+
+        }
+
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+                <span class="number">${index + 1} / ${quizinfo.length}</span>
+                <div class="question">${quizinfo[index].question}<br><br>${quizinfo[index].Desc}</div>
+                <div class="user__answer">
+                    <input type="text" placeholder="정답을 입력하세요.">
+                </div>
+                <div class="answer none">${quizinfo[index].answer}</div>
+                <div class="play__btn">
+                    <button class="confirm ">확인하기</button>
+                    <button class="next none">다음 문제</button>
+                </div>
+            `;
+            quizPlay.innerHTML = quizWrapTag;
+
+            // 선택자
+            const playBtn = quizPlay.querySelector(".play__btn");
+            const quizConfirm = playBtn.querySelector(".confirm");
+            const quiznext = playBtn.querySelector(".next");
+            const quizInput = quizPlay.querySelector(".user__answer");
+            const answerElement = quizPlay.querySelector(".answer");
+            const quizQuestion = quizPlay.querySelector(".question");
+
+            // 정답 버튼 클릭
+            quizConfirm.addEventListener("click", () => {
+                const userInput = quizWrap.querySelector("input").value;
+                if (userInput !== '') {
+                    const quizAnswer = quizinfo[index].answer;       // 정답지의 정답
+                    resultAnswer[index] = userInput;                        // 사용자 정답 저장
+                    console.log(resultAnswer);
+                    if (compareWithoutSpaces(userInput, quizAnswer)) {
+                        quizPlay.classList.add("good");
+                        userAnswernum += 1;
+                    } else {
+                        quizPlay.classList.add("bad");
+                        answerElement.classList.remove("none");
+                    }
+                    quizInput.classList.add("none");
+                    quiznext.classList.remove("none");
+                    quizConfirm.classList.add("none");
+                } else {
+                    alert("답을 입력해주세요!");
+                }
+            })
+
+            // 다음 문제 버튼을 클릭하면 alert()
+            quiznext.addEventListener("click", () => {
+                if (currentIndex < quizinfo.length - 1) {
+                    currentIndex++;
+                    updateQuiz(currentIndex);
+                    quiznext.classList.add("none");
+                    quizConfirm.classList.remove("none");
+                    quizPlay.classList.remove("bad");
+                    quizPlay.classList.remove("good");
+                } else {
+                    alert("퀴즈가 종료됐습니다");
+                    quizend();
+                    userAnswernum++;
+                    currentIndex = 0;
+                    quizPlay.classList.add("none");
+                    quizEnd.classList.remove("none");
+                }
+            })
+        }
+
+        // 페이지가 로드된 후 실행
+        startBtn.addEventListener("click", () => {
+            quizStart.classList.add("none");
+            quizPlay.classList.remove("none");
+            fetchQuiz();
+        });
+    </script>
 </body>
 
 </html>
