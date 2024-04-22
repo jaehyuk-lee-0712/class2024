@@ -33,7 +33,7 @@ body {
     border-bottom: 1px solid #d2d2d2;
 }
 
-.header__inner h1 {
+.header__inner h1 a {
     font-family: "Montserrat";
     color: #d2d2d2;
     font-weight: 300;
@@ -43,9 +43,13 @@ body {
     margin: 0 auto;
 }
 
+
 .header__inner h1 em {
     font-weight: 800;
     font-style: normal;
+    font-size: 18px;
+    color: #d2d2d2;
+    font-family: "Montserrat";
 }
 
 
@@ -64,7 +68,6 @@ li {
 
 #footer {
     width: 100%;
-    height: 60px;
 }
 
 .footer__inner {}
@@ -90,4 +93,9 @@ li {
     display: inline-block;
     font-family: "Montserrat";
     line-height: 1;
+}
+
+.footer__inner ul li.active a {
+    background-color: #d2d2d2;
+    color: #272727;
 }
