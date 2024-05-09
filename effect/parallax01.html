@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="assest/css/parallax.css">
+    <style>
+        .main__inner {}
+
+        .main__inner>section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .main__inner>section .num {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            color: #000;
+            font-family: "IBM Plex Sans Condensed", sans-serif;
+            font-size: 30px;
+        }
+
+        .main__inner>section:nth-child(even) {
+            background-color: #00000015;
+        }
+
+        .main__inner>section .img {
+            width: 200px;
+            height: 200px;
+            background-image: url(assest/img/bgi01.jpg);
+        }
+
+        .main__inner>section .img.active {
+            background-image: url(assest/img/bg02.jpg);
+        }
+    </style>
+</head>
+
+<body class="parallax">
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1><a href="index.html">Parallax Effect</a> <em>01</em></h1>
+                <p>GSAP scrollTrigger - 애니메이션 기본효과</p>
+
+                <div class="link">
+                    <ul>
+                        <li><a href="mouse01.html">mouse</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- header -->
+
+        <main id="main">
+            <div class="main__inner">
+                <section id="section01">
+                    <span class="num">01</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 01 -->
+
+                <section id="section02">
+                    <span class="num">02</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 02 -->
+
+                <section id="section03">
+                    <span class="num">03</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 03 -->
+
+                <section id="section04">
+                    <span class="num">04</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 04 -->
+
+                <section id="section05">
+                    <span class="num">05</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 05 -->
+
+                <section id="section06">
+                    <span class="num">06</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 06 -->
+
+                <section id="section07">
+                    <span class="num">07</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 07 -->
+
+                <section id="section08">
+                    <span class="num">08</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 08 -->
+
+                <section id="section09">
+                    <span class="num">09</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 09 -->
+            </div>
+        </main>
+        <!-- main -->
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <ul>
+                        <li class="active"><a href="Parallax01.html">01</a></li>
+                        <li><a href="Parallax02.html">02</a></li>
+                        <li><a href="Parallax03.html">03</a></li>
+                        <li><a href="Parallax04.html">04</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        <!-- footer -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        // to : 시작 , from : 설정한 css애니메이션 부터 처음으로.
+
+        // 01
+        gsap.to("#section01 .img", {
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100
+        })
+
+        // 02 : trigger
+        gsap.to("#section02 .img", {
+            duration: 5,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+
+            // 화면에 보이면 바로 움직입니다.
+            scrollTrigger: {
+                trigger: "#section02 .img"
+            }
+        })
+
+        // 03 
+        gsap.to("#section03 .img", {
+            duration: 2,
+            x: 500,
+            rotaion: 360,
+            borderRadius: 100,
+
+            // onEnter : section에 들어갔을 때.  
+            // onLeave, : section에서 나갔을 때. 
+            // onEnterBack : section에 다시 들어갔을 때. 
+            //onLeaveBack : section에서 다시 나갔을 때.
+
+            //  "play" : 애니메이션 실행, "pause" : 정지, "resume", "reset", 
+            //  "restart", "complete", "reverse", and "none". // 각 속성 오늘 정리하기.
+
+            // toggleActions : 상황별 애니메이션 처리
+            scrollTrigger: {
+                trigger: "#section03 .img",
+                toggleActions: "play none resume none"
+            }
+        })
+
+        // 04 : start , end : 애니메이션 시작, 끝 설정
+        gsap.to("#section04 .img", {
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section04 .img",
+                toggleActions: "play none reverse none",
+                markers: false,
+                start: "top 50%",
+                end: "bottom 20%"
+            }
+        })
+
+        // 05 : scrub : 스크롤 한 만큼만 움직이는 기능
+        gsap.to("#section05 .img", {
+            x: 500,
+            duration: 2,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section05 .img",
+                markers: false,
+                start: "top 50%",
+                end: "bottom 10%",
+                scrub: 4
+            }
+        })
+
+        // 06 : pin 
+        gsap.to("#section06 .img", {
+            duration: 2,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section06 .img",
+                start: "top 50%",
+                end: "bottom 200px",
+                markers: false,
+                scrub: 4,
+                pin: true
+            }
+        })
+
+        // 07 : toggleClass 
+        gsap.to("#section07 .img", {
+            x: 500,
+            duration: 2,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section07 .img",
+                start: "top center",
+                end: "bottom 200px",
+                markers: false,
+                scrub: true,
+                toggleClass: "active",
+                id: "box7"
+
+            }
+        })
+
+        // 08 : callBack 함수 
+        gsap.to("#section08 .img", {
+            x: 500,
+            duration: 2,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section08 .img",
+                start: "top center",
+                end: "bottom 200px",
+                scrub: true,
+                markers: true,
+                // onEnter: () => { console.log("onEnter") },
+                // onLeave: () => { console.log("onLeave") },
+                // onEnterBack: () => { console.log("onEnterBack") },
+                // onLeaveBack: () => { console.log("onLeaveBack") }
+                onUpdate: (self) => { console.log("onUpdate : ", self.progress.toFixed(3)) },
+                onToggle: (self) => { console.log("onToggle : ", self.isActive) }
+            }
+        })
+    </script>
+</body>
+
+</html>

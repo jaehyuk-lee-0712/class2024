@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect2</title>
+    <link rel="stylesheet" href="assest/css/parallax.css">
+    <style>
+        .main__inner section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main__inner section:nth-child(even) {
+            background-color: #00000016;
+        }
+
+        #section02,
+        #section04,
+        #section06,
+        #section08 {
+            background-color: #00000016;
+        }
+
+        #section05 {
+            flex-direction: column;
+        }
+
+        #section05 .text,
+        #section06 .text {
+            font-family: "IBM Plex Sans Condensed", sans-serif;
+            font-size: 5vw;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1;
+
+        }
+
+        .main__inner section .num {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            color: #111;
+            font-family: 'Poppins';
+            font-size: 40px;
+            font-weight: 200;
+            line-height: 1;
+        }
+
+        .main__inner section .img {
+            width: 200px;
+            height: 200px;
+            background-image: url(assest/img/bgi01.jpg);
+            background-size: cover;
+            margin: 5px;
+        }
+
+        .main__inner section .img.active {
+            background-image: url(assest/img/bg02.jpg);
+        }
+
+        #section07 .text {
+            font-family: "IBM Plex Sans KR", sans-serif;
+            font-size: 5vw;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            background-color: #dcb8b8;
+        }
+
+        #section08 {
+            flex-direction: column;
+        }
+
+        #section08 .text {
+            font-size: 2vw;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-family: "IBM Plex Sans KR", sans-serif;
+            color: #fff;
+        }
+
+        #section08 .img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #section09 .text {
+            font-size: 2vw;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-family: "IBM Plex Sans Condensed", sans-serif;
+            color: #d2d2d2;
+        }
+
+        #section09 .star {
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black), 4px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="parallax bg2">
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1><a href="index.html" id="logo">Parallax Effect</a> <em>02</em></h1>
+                <p>GSAP scrollTrigger - Pin 애니메이션</p>
+
+                <div class="link">
+                    <ul>
+                        <li><a href="mouse01.html">mouse</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- header -->
+
+        <main id="main">
+            <div class="main__inner">
+                <section id="section01">
+                    <span class="num">01</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 01 -->
+
+                <section id="section02">
+                    <span class="num">02</span>
+                    <div class="img i1"></div>
+                    <div class="img i2"></div>
+                    <div class="img i3"></div>
+                    <div class="img i4"></div>
+                </section>
+                <!-- // section 02 -->
+
+                <section id="section03">
+                    <span class="num">03</span>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 03 -->
+
+                <section id="section04">
+                    <span class="num">04</span>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 04 -->
+
+                <section id="section05">
+                    <span class="num">05</span>
+                    <div class="text t1">section5</div>
+                    <div class="text t2">section5</div>
+                    <div class="text t3">section5</div>
+                    <div class="text t4">section5</div>
+                </section>
+                <!-- // section 05 -->
+
+                <section id="section06">
+                    <span class="num">06</span>
+                    <div class="text">SECTION6</div>
+                </section>
+                <!-- // section 06 -->
+
+                <section id="section07">
+                    <span class="num">07</span>
+                    <div class="text t1">코딩이란?</div>
+                    <div class="text t2">프로그래밍 코드를</div>
+                    <div class="text t3">어딘가에</div>
+                    <div class="text t4">적는 것을 말한다.</div>
+                    <div class="text t5">코딩은</div>
+                    <div class="text t6">누구나</div>
+                    <div class="text t7">할 수 있다.</div>
+                </section>
+                <!-- // section 07 -->
+
+                <section id="section08">
+                    <span class="num">08</span>
+                    <div class="text t1">section08</div>
+                    <div class="text t2">section08</div>
+                    <div class="text t3">section08</div>
+                    <div class="img"></div>
+                </section>
+                <!-- // section 08 -->
+
+                <section id="section09">
+                    <span class="num">09</span>
+                    <div class="text">
+                        space
+                    </div>
+                </section>
+                <!-- // section 09 -->
+            </div>
+        </main>
+        <!-- main -->
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <ul>
+                        <li><a href="Parallax01.html">01</a></li>
+                        <li><a class="active" href="Parallax02.html">02</a></li>
+                        <li><a href="Parallax03.html">03</a></li>
+                        <li><a href="Parallax04.html">04</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        <!-- footer -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script>
+        // to : 시작 , from : 설정한 css애니메이션 부터 처음으로.
+        // timeline 애니메이션 연속적으로 주기 위한 메소드
+
+        // 01 : 이미지 애니메이션 추가
+        const ani1 = gsap.timeline();
+
+        ani1.to("#section01 .img", {
+            scale: 0, borderRadius: 200, rotation: 720
+        })
+            .to("#section01 .img", {
+                scale: 1, borderRadius: 20, rotation: 0
+            });
+
+        ScrollTrigger.create({
+            animation: ani1,
+            trigger: "#section01",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+        // ani1.to("#section01 .img", {
+
+        //     duration: 2, x: 500, borderRadius: 200
+        // })
+        //     .to("#section01 .img", {
+        //         duration: 2, x: -500, borderRadius: 20
+        //     })
+        //     .to("#section01 .img", {
+        //         duration: 2, x: 0, scale: 0.5
+        //     })
+
+        //     .to("#section01 .img", {
+        //         duration: 2, y: -500, scale: 1, rotate: 360
+        //     })
+
+
+        // 02 : 이미지 순차적으로 나오기
+        // 뒤에 옵션값 설정 가능.
+        const ani2 = gsap.timeline();
+
+
+        ani2.from("#section02 .i1", { y: -100, autoAlpha: 0, borderRadius: 200 }, "as")
+            .from("#section02 .i2", { y: 100, autoAlpha: 0, borderRadius: 200 }, "b")
+            .from("#section02 .i3", { y: -100, autoAlpha: 0, borderRadius: 200 }, "as")
+            .from("#section02 .i4", { y: 100, autoAlpha: 0, borderRadius: 200 }, "b")
+
+        ScrollTrigger.create({
+            animation: ani2,
+            trigger: "#section02",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+
+        // 03 : 이미지 랜덤으로 나오기
+        const ani3 = gsap.timeline();
+
+
+        ani3.from("#section03 .img", {
+            y: -100,
+            autoAlpha: 0,
+            borderRadius: 200,
+            scale: 0.5,
+            ease: "power4.out",
+            stagger: {
+                amount: 3,
+                from: "random"
+            }
+        })
+
+
+        ScrollTrigger.create({
+            animation: ani3,
+            trigger: "#section03",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+
+        // 04 : 이미지 축소
+        const ani4 = gsap.timeline();
+
+        ani4.from("#section04 .img", {
+            autoAlpha: 0,
+            scale: 5,
+            width: "100vw",
+            heigth: "100vh"
+        })
+
+        ScrollTrigger.create({
+            animation: ani4,
+            trigger: "#section04",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+
+        // 05 : 텍스트 애니메이션
+        const ani5 = gsap.timeline();
+        ani5.to("#section05 .t1", { xPercent: 300 }, "text")
+            .to("#section05 .t2", { xPercent: -300 }, "text")
+            .to("#section05 .t3", { xPercent: 300 }, "text")
+            .to("#section05 .t4", { xPercent: -300 }, "text")
+
+        ScrollTrigger.create({
+            animation: ani5,
+            trigger: "#section05",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+        // 06 : 텍스트 확대
+        const ani6 = gsap.timeline();
+        ani6.to("#section06 .text", { scale: 60, duration: 2, rotation: 100 })
+            .to("#section06 .text", { autoAlpha: 0 })
+
+        ScrollTrigger.create({
+            animation: ani6,
+            trigger: "#section06",
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+        // 07 텍스트 제자리 애니메이션
+        const ani7 = gsap.timeline();
+        ani7.from("#section07 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t2", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t3", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t4", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t5", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t6", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+        ani7.from("#section07 .t7", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+
+        ScrollTrigger.create({
+            animation: ani7,
+            trigger: "#section07",
+            start: "top top",
+            end: "+=6000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: false
+        })
+
+        //08 : 텍스트 애니메이션
+        const ani8 = gsap.timeline();
+        ani8.from("#section08 .t1", { x: innerWidth * 1 })
+            .from("#section08 .t2", { x: innerWidth * -1 })
+            .from("#section08 .t3", { x: innerWidth * 1 })
+            .from("#section08 .img", { x: innerWidth * 1, rotation: 360, scale: 3.5 })
+
+        ScrollTrigger.create({
+            animation: ani8,
+            trigger: "#section08",
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticpatePin: 1,
+            markers: true
+        })
+
+        //09
+        const section9 = document.querySelector("#section09");
+        const newStars = document.querySelectorAll(".star");
+
+        const ani9 = gsap.timeline(
+            {
+                scrollTrigger: ({
+                    trigger: "#section09",
+                    markers: true,
+                    start: "top top",
+                    end: "+=4000",
+                    scrub: true,
+                    anticpatePin: 1,
+                    pin: true,
+                    onUpdate: function (self) {
+
+                        const progress = self.progress;
+                        const direction = self.direction;
+
+                        if (progress > 0.6 && progress < 1 && direction == 1) {
+                            makeStars();
+                        } else if (direction == -1) {
+                            removeStars();
+                        }
+                    }
+                })
+            }
+        );
+
+        ani9.to("#section09", { duration: 2, backgroundColor: "#000000" })
+            .to("#section09 .text", { duration: 2, autoAlpha: 0 })
+            .to("#logo", { duration: 2, color: "#fff" })
+
+        function makeStars() {
+            const div = document.createElement("div");
+            div.className = "star";
+            div.style.color = "#fff"
+            div.textContent = "*";
+
+            const randomX = Math.random() * (innerWidth - 20); // div 너비(20px)를 고려하여 랜덤 위치 설정
+            const randomY = Math.random() * (innerHeight - 20); // div 높이(20px)를 고려하여 랜덤 위치 설정
+
+            div.style.position = "absolute";
+            div.style.left = `${randomX}px`;
+            div.style.top = `${randomY}px`;
+
+            section9.append(div);
+        }
+
+        function removeStars() {
+
+            const stars = document.querySelectorAll(".star");
+            const starCount = stars.length;
+            const randomStar = Math.floor(Math.random() * starCount)
+
+            if (starCount > 0) {
+                stars[randomStar].parentNode.removeChild(stars[randomStar]);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

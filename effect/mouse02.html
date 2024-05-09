@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse Effect</title>
-    <link rel="stylesheet" href="assest/css/css.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -31,6 +31,7 @@
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="assest/css/mouse.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
@@ -119,6 +120,56 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .sapn1.active {
+            color: #000;
+            transition: all 300ms;
+        }
+
+        .span2.active {
+            color: red;
+            transition: all 300ms;
+        }
+
+        .span3.active {
+            color: #D49C3D;
+            transition: all 300ms;
+        }
+
+        .span4.active {
+            color: #D14B3D;
+            transition: all 300ms;
+        }
+
+        .span5.active {
+            color: blue;
+            transition: all 300ms;
+        }
+
+        .span6.active {
+            color: #44A3F7;
+            transition: all 300ms;
+        }
+
+        .span7.active {
+            color: #5ACB3C;
+            transition: all 300ms;
+        }
+
+        .span8.active {
+            color: #DEBF40;
+            transition: all 300ms;
+        }
+
+        .span9.active {
+            color: #000;
+            transition: all 300ms;
+        }
+
+        .span10.active {
+            color: #000;
+            transition: all 300ms;
+        }
     </style>
 </head>
 
@@ -135,7 +186,10 @@
             <div class="cursor"></div>
             <div class="main__inner">
                 <p>
-                    JavaScript
+                    <span class="sapn1">J</span><span class="span2">a</span><span class="span3">v</span><span
+                        class="span4">a</span><span class="span5">S</span><span class="span6">c</span><span
+                        class="span7">r</span><span class="span8">i</span><span class="span9">p</span><span
+                        class="span10">t</span>
                 </p>
             </div>
             <div class="main__info">
@@ -152,13 +206,18 @@
         <footer id="footer">
             <div class="footer__inner">
                 <nav>
-                    <ul>
+                    <ul class="footer1">
                         <li><a href="mouse01.html">01</a></li>
                         <li class="active"><a href="mouse02.html">02</a></li>
                         <li><a href="mouse03.html">03</a></li>
                         <li><a href="mouse04.html">04</a></li>
                     </ul>
                 </nav>
+                <div class="link">
+                    <ul>
+                        <li><a href="parallax01.html">parallax</a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
         <!-- footer -->
@@ -176,6 +235,18 @@
         document.addEventListener("mousemove", (event) => {
             gsap.to(".cursor", { duration: 0.6, left: event.clientX - 50, top: event.clientY - 50 });
         });
+
+        const spanList = document.querySelectorAll(".main__inner p span ");
+
+        for (let i = 1; i <= spanList.length; i++) {
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseover", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.add("active")
+            });
+
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseout", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.remove("active")
+            });
+        }
 
     </script>
 

@@ -180,22 +180,39 @@
         })
     </script>
     <script> // 
-        $(function () {
-            const tabTitle = $(".title ul li"); //  탭 버튼
-            const tabCont = $(".content > div "); // 콘텐츠 설정
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabTitles = document.querySelectorAll(".title ul li"); // 탭 버튼
+            const tabContents = document.querySelectorAll(".content > div"); // 콘텐츠
 
-            // 모든 컨텐츠를 안 보이게 설정 후 첫 번째 콘텐츠만 보이게끔 설정 (페이지 로드 후 기본 콘텐츠 설정)
-            tabCont.hide().eq(0).show();
+            // 모든 콘텐츠를 숨기고 첫 번째 콘텐츠만 보이도록 설정 (페이지 로드 후 기본 콘텐츠 설정)
+            tabContents.forEach(function (content, index) {
+                if (index !== 0) {
+                    content.style.display = "none";
+                }
+            });
 
-            tabTitle.click(function (e) {
-                // e.preventDefault();
+            tabTitles.forEach(function (title, index) {
+                title.addEventListener("click", function () {
+                    // 현재 클릭한 탭의 인덱스를 가져옴
+                    const tabIndex = index;
 
-                const index = $(this).index();
+                    // 모든 탭에 대해 활성 클래스를 제거하고 현재 클릭한 탭에 활성 클래스를 추가
+                    tabTitles.forEach(function (tabTitle) {
+                        tabTitle.classList.remove("active");
+                    });
+                    this.classList.add("active");
 
-                $(this).addClass("active").siblings().removeClass("active");
-                tabCont.hide().eq(index).show();
-            })
-        })
+                    // 모든 콘텐츠를 숨기고 현재 클릭한 탭에 해당하는 콘텐츠만 보이도록 설정
+                    tabContents.forEach(function (content, contentIndex) {
+                        if (contentIndex === tabIndex) {
+                            content.style.display = "block";
+                        } else {
+                            content.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
     </script>
 
     <script> // 이미지 슬라이드
