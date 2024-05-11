@@ -1,0 +1,562 @@
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "bitbit";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/DNFBitBit.woff")format("woff"),
+        url("../fonts/DNFBitBit.woff2") format("woff2");
+    font-display: swap;
+}
+
+
+
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "BitBit";
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* common */
+
+.none {
+    display: none !important;
+}
+
+#quiz__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 8px solid #8a6ede;
+}
+
+#quiz__wrap::before {
+    content: "";
+    border: 8px solid #8a6ede;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+    z-index: -1;
+}
+
+/* quiz__start */
+
+.quiz__start {
+    width: 50vw;
+    height: 65vh;
+    border: 10px solid #f8f8f8;
+    background-color: #8a69ed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+.quiz__start .title {
+    border-bottom: 10px solid #f8f8f8;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+.quiz__start .title span {
+    font-family: 'GmarketSans';
+    color: #fff;
+    font-weight: 10vw;
+    letter-spacing: 4px;
+    margin: 0 auto;
+}
+
+.quiz__start .text ul {
+    margin-top: 10px;
+}
+
+.quiz__start .text li {
+    font-family: 'GmarketSans';
+    color: #fff;
+    line-height: 1.3;
+}
+
+
+.quiz__start .text span {
+    font-family: 'GmarketSans';
+    font-size: 20px;
+    color: #fff;
+}
+
+.quiz__start .text i {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-size: 20px;
+    color: #E8D962;
+}
+
+.quiz__start .text strong {
+    font-family: 'GmarketSans';
+    font-weight: normal;
+    font-size: 20px;
+    color: #67F6AD;
+}
+
+.quiz__start .text h1 {
+    font-size: 6vmax;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+}
+
+.quiz__start .start__btn {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.quiz__start .start__btn button {
+    padding: 10px 40px;
+    font-size: 30px;
+    border-radius: 40px;
+    border: 5px solid #f8f8f8;
+    background-color: #7851ee;
+    color: #fff;
+    cursor: pointer;
+}
+
+.quiz__start .start__btn button:hover {
+    background-color: #fff;
+    color: #7851ee;
+    border: 5px solid #7851ee;
+}
+
+/* quiz__bg */
+.quiz__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+.quiz__bg #canvas {
+    position: absolute;
+    background-color: #ada2e7b9;
+    width: 100%;
+    /* height: 100%; */
+    background: #2c1366;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* quiz__play */
+.quiz__play {
+    width: 50vw;
+    min-height: 30vh;
+    border: 10px solid #f8f8f8;
+    background-color: #8a69ed;
+    border-radius: 10px;
+    position: relative;
+    padding: 24px;
+}
+
+.quiz__play::before {
+    content: 'Good!';
+    position: absolute;
+    font-size: 60px;
+    left: -117px;
+    top: 50px;
+    font-family: 'bitbit';
+    color: #fae11f;
+    text-shadow: 5px 5px 0px #fff;
+    transform: rotate(-90deg);
+}
+
+.quiz__play::after {
+    content: '정처기!';
+    position: absolute;
+    font-size: 60px;
+    right: -117px;
+    bottom: 50px;
+    font-family: 'bitbit';
+    color: #15e4ff;
+    text-shadow: 2px 2px 0px #fff;
+    transform: rotate(90deg);
+}
+
+.quiz__play .number {
+    position: absolute;
+    right: -10px;
+    border-radius: 5px;
+    top: -70px;
+    background-color: #6335eb;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 30px;
+    border: 8px solid #f8f8f8;
+}
+
+.quiz__play .question {
+    font-family: 'GmarketSans';
+    color: #fff;
+    line-height: 1.3;
+    font-size: 24px;
+}
+
+.quiz__play .question:before {
+    content: 'Q.';
+    font-size: 40px;
+    font-weight: bold;
+    color: #fae11f;
+}
+
+.quiz__play .user__answer {
+    margin-top: 20px;
+}
+
+.quiz__play .user__answer input {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+.quiz__play .answer {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+    text-align: center;
+    font-size: 35px;
+    background-color: #fff;
+}
+
+.quiz__play .play__btn {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+
+.quiz__play .play__btn .confirm:hover {
+    background-color: #fff;
+    border: 5px solid #b9a1ff;
+    color: #7851ee;
+    cursor: pointer;
+}
+
+.quiz__play .play__btn .next:hover {
+    background-color: #fff;
+    border: 5px solid #b9a1ff;
+    color: #7851ee;
+    cursor: pointer;
+}
+
+
+.quiz__play .play__btn button {
+    font-family: 'GmarketSans';
+    width: 130px;
+    height: 45px;
+    border-radius: 30px;
+    border: 4px solid #fff;
+    background-color: #7851ee;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* quiz__finish */
+.quiz__finish {
+    width: 40%;
+    height: 100vh;
+    border: 10px solid #f8f8f8;
+    background-color: #8a69ed;
+    border-radius: 10px;
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quiz__finish .totalResults {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    border-bottom: 4px solid #f8f8f8;
+    padding: 20px;
+}
+
+.quiz__finish .finish__btn {
+    position: absolute;
+    border-top: 4px solid #f8f8f8;
+    padding: 20px;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz__finish .finish__btn button {
+    font-family: 'GmarketSans';
+    width: 130px;
+    height: 45px;
+    border-radius: 30px;
+    border: 4px solid #fff;
+    background-color: #7851ee;
+    color: #fff;
+    font-size: 20px;
+}
+
+.quiz__finish .totalResults h2 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.quiz__finish .quiz__main {
+    padding: 20px 0 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz__finish .quiz__main .question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.quiz__finish .quiz__main .Re {
+    border: 1px solid #f8f8f8;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz__finish .quiz__main .answer {
+    border: 1px solid #f8f8f8;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz__finish .quiz__main .answer::before {
+    content: '😊정답: ';
+}
+
+/* good, bad */
+.quiz__play.good {
+    position: relative;
+}
+
+.quiz__play.good::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: -11px;
+    z-index: 100;
+}
+
+.quiz__play.bad {
+    position: relative;
+}
+
+.quiz__play.bad::before {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 100;
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+
+.quiz__play.bad::after {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 100;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
+.quiz__finish .quizsresult.good {
+    position: relative;
+}
+
+.quiz__finish .quizsresult.good::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    border: 6px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    z-index: 100;
+}
+
+.quiz__finish .quizsresult.bad {
+    position: relative;
+}
+
+.quiz__finish .quizsresult.bad::before {
+    content: '';
+    width: 100px;
+    height: 6px;
+    background-color: red;
+    position: absolute;
+    left: -10px;
+    top: 70px;
+    z-index: 100;
+    border-radius: 30px;
+    transform: rotate(45deg);
+}
+
+.quiz__finish .quizsresult.bad::after {
+    content: '';
+    width: 100px;
+    height: 6px;
+    background-color: red;
+    position: absolute;
+    left: -10px;
+    top: 70px;
+    z-index: 100;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+}
+
+/* 미디어 커리 */
+@media (max-width:800px) {
+    .quiz__start {
+        width: 100%;
+        height: 100%;
+    }
+
+    .quiz__play {
+        width: 100%;
+        height: 100%;
+    }
+
+    .quiz__play .question {
+        margin-top: 50px;
+    }
+
+    .quiz__play::before {
+        display: none;
+    }
+
+    .quiz__play::after {
+        display: none;
+    }
+
+    .quiz__bg {
+        display: none;
+    }
+
+    .quiz__play .number {
+        top: -10px;
+    }
+
+    .quiz__finish {
+        width: 100%;
+        height: 100%;
+    }
+}

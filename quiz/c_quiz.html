@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Gmae!</title>
+    <link rel="stylesheet" href="assets/css/cquiz.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="wrap">
+            <div id="header">
+                <div id="temp_div"></div>
+                <div id="question_title">
+                    <span>
+
+                    </span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="quiz01.html">1</a></li>
+                        <li><a href="quiz02.html">2</a></li>
+                        <li><a href="quiz03.html">3</a></li>
+                        <li class="active"><a href="quiz04.html">4</a></li>
+                        <li><a href="quiz05.html">5</a></li>
+                        <li><a href="quiz06.html">6</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="quiz">
+                <div id="question">
+                    <div id="question_title">
+                        <div id="leftQuiz"></div>
+                        <div id="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div id="totalQuiz"></div>
+                    </div>
+
+                    <div id="question_detail">
+                        <div id="question_sub_title"></div>
+                        <div class="detail_box">
+                            <span class="detail">
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="confirm">
+                    <div class="input">
+                        <label for="user__answer">
+                            <input id="user__answer" type="text" placeholder="작성란.">
+                        </label>
+                    </div>
+                    <div class="ansdesc">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                        <button class="checkAns none">해설 보기</button>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>정답/해설 확인하기!</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                <div class="answer"></div>
+                <div class="desc"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        const quizWrap = document.getElementById("wrap");
+        let checkCnt = 0;
+        const confrim = document.querySelector(".confirm");
+        const subTitle = document.getElementById("question_sub_title");
+        var userAnswer = document.getElementById("user__answer");
+        const question = document.querySelector(".detail_box .detail")
+        const answer = document.querySelector(".answer")
+        const desc = document.querySelector(".desc");
+        const nextBtn = document.querySelector(".next");
+        const checkBtn = document.querySelector(".checkAns");
+
+        const animation = document.getElementById("progress-bar");
+        const animationBar = document.querySelector(".progress");
+
+        let leftQuiz = document.getElementById("leftQuiz");
+
+
+        let countdownTimer;
+        let isPaused = false
+        const leftTimer = document.getElementById("totalQuiz");
+
+        const modal = document.getElementById("modal");
+
+        function modalOn() {
+            modal.style.display = "flex";
+        }
+
+        var whitespaceRegex = /\s+/g;
+
+        let quizInfo = [];
+
+        const fetchQuiz = async () => {
+            await fetch("https://nicejmp1.github.io/class2024/json/gineungsaJC2005_02.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map(item => {
+                        const formattedQuiz = {
+                            date: "2024년",
+                            subject: item.subject,
+                            question: item.question,
+                            answer: item.correct_answer,
+                            desc: item.desc
+                        }
+
+                        return formattedQuiz;
+
+                    })
+                })
+            updateQuiz();
+            setTime();
+
+            leftQuiz.innerHTML = `${checkCnt + 1}/100`
+            subTitle.innerHTML = `${checkCnt + 1}. 다음 문제의 답을 작성하시오.`;
+        }
+
+        const updateQuiz = () => {
+            $("#question_title").find("span").html(quizInfo[checkCnt].subject)
+            question.innerHTML = quizInfo[checkCnt].question;
+            answer.innerHTML = quizInfo[checkCnt].answer;
+            desc.innerHTML = quizInfo[checkCnt].desc;
+        }
+
+        confrim.addEventListener("click", () => {
+            this.pauseTime();
+            this.stopAnime();
+            if (userAnswer.value != "" && userAnswer != null && userAnswer != undefined) {
+                var correctAnswer = quizInfo[checkCnt].answer;
+                if (userAnswer.value === correctAnswer) {
+                    alert("정답");
+                    subTitle.classList.add("good");
+                    confrim.classList.add("none");
+                    nextBtn.classList.remove("none");
+                    checkBtn.classList.remove("none");
+                } else {
+                    alert("땡!")
+                    subTitle.classList.add("bad");
+                    confrim.classList.add("none");
+                    nextBtn.classList.remove("none");
+                    checkBtn.classList.remove("none");
+                }
+            } else {
+                alert("정답을 입력해주세요!")
+            }
+        })
+
+        checkBtn.addEventListener("click", () => {
+            this.modalOn();
+        })
+
+        nextBtn.addEventListener("click", () => {
+            startAnime();
+            checkCnt++;
+            updateQuiz();
+            confrim.classList.remove("none");
+            subTitle.classList.remove("good");
+            subTitle.classList.remove("bad");
+            nextBtn.classList.add("none");
+            checkBtn.classList.add("none");
+
+            leftQuiz.innerHTML = `${checkCnt + 1}/100`
+            subTitle.innerHTML = `${checkCnt + 1}. 다음 문제의 답을 작성하시오.`;
+            clearInterval()
+        })
+
+        fetchQuiz();
+
+        const closeBtn = modal.querySelector(".close-area");
+        closeBtn.addEventListener("click", e => {
+            modal.style.display = "none";
+        })
+
+        function setTime() {
+            const TIME_LIMIT = 60;
+            let timeLeft = TIME_LIMIT;
+            countdownTimer = setInterval(() => {
+
+
+                leftTimer.textContent = `시간: ${timeLeft}초`;
+
+                if (!isPaused) {
+                    timeLeft--;
+                    if (timeLeft <= 0) {
+                        leftTimer.textContent = "시간 종료!";
+                        alert("시간 초과!")
+                        clearInterval(countdownTimer);
+                    }
+                }
+            }, 1000)
+
+
+        };
+
+        // 일시정지 함수
+        function pauseTime() {
+            isPaused = true;
+            console.log(isPaused);
+        }
+
+        // 다시 시작 함수
+        function resumeTime() {
+            isPaused = false;
+        }
+
+        function resetTime() {
+            clearInterval(countdownTimer);
+            isPaused = false;
+        }
+
+        function stopAnime() {
+            animationBar.classList.add("paused");
+        }
+
+        function startAnime() {
+            console.log(animationBar.style);
+
+            animationBar.style.width = "100%";
+        }
+
+
+    </script>
+</body>
+
+</html>

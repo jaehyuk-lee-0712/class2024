@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 04</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Quiz</a></h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li class="active"><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="mailto:dlwogur0712@gmail.com">dlwogur0712@gmail.com</a>
+    </footer>
+
+    <script>
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        const quizInfo = [
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "입출력 조작의 시간과 중앙처리장치의 처리시간과의 불균형을 보완하는 것은?",
+                choices: {
+                    1: "채널장치",
+                    2: "제어장치",
+                    3: "터미널장치",
+                    4: "콘솔장치"
+                },
+                answer: "1",
+                desc: "채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완합니다.",
+            },
+            {
+                date: "2021년 2회",
+                type: "정보처리기능사",
+                question: "정보처리시스템에서 사용되는 기본 기억장치의 종류는?",
+                choices: {
+                    1: "RAM",
+                    2: "ROM",
+                    3: "HDD",
+                    4: "SSD"
+                },
+                answer: "1",
+                desc: "RAM(랜덤 액세스 메모리)은 정보처리시스템에서 사용되는 주 기억장치입니다.",
+            },
+            {
+                date: "2021년 3회",
+                type: "정보처리기능사",
+                question: "컴퓨터 네트워크의 종류 중 유선 네트워크가 아닌 것은?",
+                choices: {
+                    1: "이더넷",
+                    2: "WLAN",
+                    3: "WAN",
+                    4: "블루투스"
+                },
+                answer: "2",
+                desc: "WLAN은 무선 로컬 에어리어 네트워크를 나타냅니다.",
+            },
+            {
+                date: "2021년 4회",
+                type: "정보처리기능사",
+                question: "OSI 7계층 모델에서 데이터를 암호화하는 계층은?",
+                choices: {
+                    1: "물리 계층",
+                    2: "전송 계층",
+                    3: "응용 계층",
+                    4: "보안 계층"
+                },
+                answer: "3",
+                desc: "응용 계층은 데이터를 암호화하거나 복호화하고 사용자 인증을 처리합니다.",
+            },
+            {
+                date: "2021년 5회",
+                type: "정보처리기능사",
+                question: "프로그램이 실행되는 동안 동적으로 할당되는 메모리 영역은?",
+                choices: {
+                    1: "힙(heap)",
+                    2: "스택(stack)",
+                    3: "데이터(data)",
+                    4: "코드(code)"
+                },
+                answer: "1",
+                desc: "힙(heap)은 프로그램이 실행되는 동안 동적으로 할당되는 메모리 영역입니다.",
+            },
+            {
+                date: "2021년 6회",
+                type: "정보처리기능사",
+                question: "네트워크에서 데이터 전송 속도를 나타내는 단위는?",
+                choices: {
+                    1: "bps",
+                    2: "Hz",
+                    3: "W",
+                    4: "Kb"
+                },
+                answer: "1",
+                desc: "bps는 초당 전송되는 비트 수를 나타내는 단위입니다.",
+            },
+            {
+                date: "2021년 7회",
+                type: "정보처리기능사",
+                question: "컴퓨터의 주기억장치는 데이터를 저장하는 역할을 수행합니다. 주기억장치의 종류로 옳지 않은 것은?",
+                choices: {
+                    1: "RAM",
+                    2: "ROM",
+                    3: "플래시 메모리",
+                    4: "HDD"
+                },
+                answer: "4",
+                desc: "HDD는 보조기억장치의 일종으로, 주기억장치는 아닙니다.",
+            },
+            {
+                date: "2021년 8회",
+                type: "정보처리기능사",
+                question: "컴퓨터 운영체제에서 사용자 인터페이스를 관리하는 소프트웨어는?",
+                choices: {
+                    1: "하드웨어",
+                    2: "파일 시스템",
+                    3: "시스템 소프트웨어",
+                    4: "응용 소프트웨어"
+                },
+                answer: "3",
+                desc: "시스템 소프트웨어는 하드웨어와 응용 소프트웨어 사이의 인터페이스 역할을 합니다.",
+            },
+            {
+                date: "2021년 9회",
+                type: "정보처리기능사",
+                question: "모니터의 해상도 단위인 '1920x1080'에서 1080은 무엇을 의미하나요?",
+                choices: {
+                    1: "화면의 가로 픽셀 수",
+                    2: "화면의 세로 픽셀 수",
+                    3: "화면의 크기",
+                    4: "화면의 비율"
+                },
+                answer: "2",
+                desc: "'1920x1080'에서 1080은 화면의 세로 픽셀 수를 나타냅니다.",
+            },
+            {
+                date: "2021년 10회",
+                type: "정보처리기능사",
+                question: "웹 페이지의 구조를 정의하는 마크업 언어는?",
+                choices: {
+                    1: "JavaScript",
+                    2: "CSS",
+                    3: "HTML",
+                    4: "SQL"
+                },
+                answer: "3",
+                desc: "HTML은 웹 페이지의 구조를 정의하는 마크업 언어입니다.",
+            }
+        ];
+
+
+        let currentQuizIndex = 0; // 현재 표시 중인 퀴즈의 인덱스
+
+        const updateQuiz = () => {
+            const quiz = quizInfo[currentQuizIndex];
+            const quizHTML = `
+                <div class="quiz">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${currentQuizIndex + 1}. ${quiz.question}</div>
+                        <div class="choices">
+                            <label for="choice-1">
+                                <input type="radio" id="choice-1" name="choice" value="1">
+                                <span>${quiz.choices["1"]}</span>
+                            </label>
+                            <label for="choice-2">
+                                <input type="radio" id="choice-2" name="choice" value="2">
+                                <span>${quiz.choices["2"]}</span>
+                            </label>
+                            <label for="choice-3">
+                                <input type="radio" id="choice-3" name="choice" value="3">
+                                <span>${quiz.choices["3"]}</span>
+                            </label>
+                            <label for="choice-4">
+                                <input type="radio" id="choice-4" name="choice" value="4">
+                                <span>${quiz.choices["4"]}</span>
+                            </label>
+                        </div>
+                        <div class="answer none">${quiz.answer}</div>
+                        <div class="desc none">${quiz.desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                    </div>
+                </div>
+            `;
+            quizWrap.innerHTML = quizHTML;
+
+            // 정답 확인 버튼에 이벤트 리스너 추가
+            const confirmButton = document.querySelector(".confirm");
+            confirmButton.addEventListener("click", answerQuiz);
+            const progressBar = document.querySelector(".progress");
+
+            console.log(progressBar);
+
+            progressBar.style.animation = "none"; // 애니메이션 중지
+            progressBar.offsetHeight; // 리플로우 강제 발생
+            progressBar.style.animation = null; // 애니메이션 재시작
+
+        };
+
+        const answerQuiz = () => {
+            const quizElement = quizWrap.querySelector(".quiz");
+            const answerElement = quizElement.querySelector(".answer");
+            const descElement = quizElement.querySelector(".desc");
+            const quizChecked = quizElement.querySelector('input[name="choice"]:checked');
+            const confirmButton = document.querySelector(".confirm");
+            const nextButton = quizElement.querySelector(".next");
+
+
+            if (quizChecked) {
+                const progressBar = document.querySelector(".progress");
+                progressBar.style.animationPlayState = "paused";
+
+                const userAnswer = quizChecked.value;
+                if (userAnswer === quizInfo[currentQuizIndex].answer) {
+                    quizElement.classList.add("good");
+                } else {
+                    quizElement.classList.add("bad");
+                    answerElement.classList.remove("none");
+                }
+                descElement.classList.remove("none");
+                nextButton.classList.remove("none");
+
+                // 다음 퀴즈로 넘어가기
+                currentQuizIndex++;
+                if (currentQuizIndex < quizInfo.length) {
+                    nextButton.addEventListener("click", updateQuiz);
+                } else {
+                    alert("퀴즈가 끝났습니다!");
+                }
+            } else {
+                alert("보기를 선택해주세요!!");
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz();
+
+            // 시간 제한 설정
+            const TIME_LIMIT = 60;
+            let timeLeft = TIME_LIMIT;
+            const timerElement = document.createElement("div");
+            timerElement.textContent = `시간: ${timeLeft}초`;
+            document.body.appendChild(timerElement);
+
+            const countdownTimer = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `시간: ${timeLeft}초`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdownTimer);
+                    timerElement.textContent = "시간 종료!";
+                    alert("시간 초과!")
+                }
+            }, 1000);
+        });
+    </script>
+</body

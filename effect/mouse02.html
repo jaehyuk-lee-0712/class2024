@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Fjalla+One&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+    <!-- orbitorn -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <!-- charkra font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assest/css/mouse.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        .main__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .main__inner p {
+            color: #d2d2d2;
+            font-size: 20vmax;
+            text-align: center;
+            /* font-family: "Titillium Web", sans-serif; */
+            /* font-family: "Playfair Display", serif; */
+            /* font-family: "Bebas Neue", sans-serif; */
+            /* font-family: "Libre Baskerville", serif; */
+            /* font-family: "Roboto Flex", sans-serif; */
+            /* font-family: "Orbitron", sans-serif; */
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 900;
+        }
+
+        .main__info {
+            position: absolute;
+            top: 60px;
+            left: 16px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .main__info ul {
+            display: flex;
+        }
+
+        .main__info ul li {
+            width: 25%;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            font-family: "Montserrat";
+            color: #d2d2d2;
+        }
+
+        .cursor {
+            width: 100px;
+            height: 100px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #ffffff20;
+            background-color: #ffffff59;
+            position: absolute;
+            left: -100px;
+            top: -100px;
+            border-radius: 50%;
+            z-index: 10000;
+            user-select: none;
+            pointer-events: none;
+            transition:
+                transform 0.5s,
+                background-color 0.3s,
+                border 0.3s,
+                border-radius 0.3s;
+
+        }
+
+        .cursor::after {
+            content: '';
+            width: 1px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sapn1.active {
+            color: #000;
+            transition: all 300ms;
+        }
+
+        .span2.active {
+            color: red;
+            transition: all 300ms;
+        }
+
+        .span3.active {
+            color: #D49C3D;
+            transition: all 300ms;
+        }
+
+        .span4.active {
+            color: #D14B3D;
+            transition: all 300ms;
+        }
+
+        .span5.active {
+            color: blue;
+            transition: all 300ms;
+        }
+
+        .span6.active {
+            color: #44A3F7;
+            transition: all 300ms;
+        }
+
+        .span7.active {
+            color: #5ACB3C;
+            transition: all 300ms;
+        }
+
+        .span8.active {
+            color: #DEBF40;
+            transition: all 300ms;
+        }
+
+        .span9.active {
+            color: #000;
+            transition: all 300ms;
+        }
+
+        .span10.active {
+            color: #000;
+            transition: all 300ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1><a href="index.html">Mouse Effect</a> <em>02</em></h1>
+            </div>
+        </header>
+        <!-- header -->
+
+        <main id="main">
+            <div class="cursor"></div>
+            <div class="main__inner">
+                <p>
+                    <span class="sapn1">J</span><span class="span2">a</span><span class="span3">v</span><span
+                        class="span4">a</span><span class="span5">S</span><span class="span6">c</span><span
+                        class="span7">r</span><span class="span8">i</span><span class="span9">p</span><span
+                        class="span10">t</span>
+                </p>
+            </div>
+            <div class="main__info">
+                <ul>
+                    <li> clientY <span class="clientY">0</span></li>
+                    <li> offsetY <span class="offsetY">0</span></li>
+                    <li> pageY <span class="pageY">0</span></li>
+                    <li> screenY <span class="screenY">0</span></li>
+                </ul>
+            </div>
+        </main>
+        <!-- main -->
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <ul class="footer1">
+                        <li><a href="mouse01.html">01</a></li>
+                        <li class="active"><a href="mouse02.html">02</a></li>
+                        <li><a href="mouse03.html">03</a></li>
+                        <li><a href="mouse04.html">04</a></li>
+                    </ul>
+                </nav>
+                <div class="link">
+                    <ul>
+                        <li><a href="parallax01.html">parallax</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        window.addEventListener("mousemove", function (e) {
+            document.querySelector(".clientY").innerHTML = e.clientY;
+            document.querySelector(".offsetY").innerHTML = e.offsetY;
+            document.querySelector(".pageY").innerHTML = e.pageY;
+            document.querySelector(".screenY").innerHTML = e.screenY;
+        })
+    </script>
+    <script>
+        document.addEventListener("mousemove", (event) => {
+            gsap.to(".cursor", { duration: 0.6, left: event.clientX - 50, top: event.clientY - 50 });
+        });
+
+        const spanList = document.querySelectorAll(".main__inner p span ");
+
+        for (let i = 1; i <= spanList.length; i++) {
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseover", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.add("active")
+            });
+
+            document.querySelector(`.main__inner p span:nth-child(${i})`).addEventListener("mouseout", function () {
+                document.querySelector(`.main__inner p span:nth-child(${i})`).classList.remove("active")
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

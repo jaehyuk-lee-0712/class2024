@@ -10,12 +10,17 @@
 
 <body>
 
+    <!-- <div class="myCom">
+        <div class="myCom__inner"></div>
+    </div> -->
+
     <div class="main__icons">
-        <div id="myComputerIcon" class="draggableIcon icon">
-            <img src="assets/img/face.png" alt="내 컴퓨터">
-            <span>내 컴퓨터</span>
+        <div id="myComputerIcon" class="draggableIcon icon dragIcon">
+            <div class="myCom">
+                <div class="myCom__inner"></div>
+            </div>
         </div>
-        <div class="draggableIcon icon">
+        <div class="draggableIcon icon myJs">
             <a href="javascript/index.html" target="_blank">
                 <img src="assets/img/icon-javascript.png" alt="자바 스크립트">
                 <span>자바 스크립트</span>
@@ -46,9 +51,9 @@
             </a>
         </div>
         <div class="draggableIcon icon">
-            <a href="mysql/index.html" target="_blank">
+            <a href="css/index.html" target="_blank">
                 <img src="assets/img/icon-css3.png" alt="CSS3">
-                <span>CSS3</span>
+                <span>css</span>
             </a>
         </div>
         <div class="draggableIcon icon">
@@ -57,8 +62,61 @@
                 <span>Blog</span>
             </a>
         </div>
+        <div class="draggableIcon icon">
+            <a href="https://jaehyuk-lee-0712.github.io/" target="_blank">
+                <img src="assets/img/ae1.png" alt="CSS3">
+                <span>Effect</span>
+            </a>
+        </div>
     </div>
     <!-- //main__icon -->
+
+    <div class="member">
+        <ul>
+            <li class="mem1"><a href="https://seodaewon1.github.io/class2024/" target="_blank"><img
+                        src="https://seodaewon1.github.io/class2024/assets/img/face.png" alt="서대원">서대원</a></li>
+            <li class="mem1"><a href="https://hwanginji.github.io/class2024/" target="_blank"><img
+                        src="https://hwanginji.github.io/class2024/assets/img/face.png" alt="황인지">황인지</a></li>
+            <li class="mem1"><a href="https://123dd654.github.io/class2024/" target="_blank"><img
+                        src="https://123dd654.github.io/class2024/assets/img/face.png" alt="강서연">강서연</a>
+            </li>
+            <li class="mem1"><a href="https://gnlgk.github.io/class2024/" target="_blank"><img
+                        src="https://gnlgk.github.io/class2024/assets/img/face.png" alt="박진아">박진아</a>
+            </li>
+            <li class="mem1"><a href="https://nicejmp1.github.io/class2024/" target="_blank"><img
+                        src="https://nicejmp1.github.io/class2024/assets/img/face.png" alt=" 박정민">박정민</a></li>
+            <li class="mem1"><a href="https://kingsong97.github.io/class2024/" target="_blank"><img
+                        src="https://kingsong97.github.io/class2024/Assets/img/FACE.png" alt="송성민">송성민</a></li>
+            <li class="mem1"><a href="https://hyunminkim93.github.io/class2024/" target="_blank"><img
+                        src="https://hyunminkim93.github.io/class2024/assets/img/face.png" alt="김현민">김현민</a></li>
+            <li class="mem1"><a href="https://sunhew.github.io/class2024/" target="_blank"><img
+                        src="https://sunhew.github.io/class2024/assets/img/face.png" alt="최선화">최선화</a>
+            </li>
+            <li class="mem1"><a href="https://kimjw04.github.io/class2024/" target="_blank"><img
+                        src="https://kimjw04.github.io/class2024/asssets/img/face.png" alt="김진우">김진우</a>
+            </li>
+            <li class="mem1"><a href="https://hyeji1364.github.io/class2024/" target="_blank"><img
+                        src="https://hyeji1364.github.io/class2024/assets/img/face.png" alt="김혜지">김혜지</a></li>
+            <li class="mem1"><a href="https://spearboy.github.io/class2024/" target="_blank"><img
+                        src="https://spearboy.github.io/class2024/asset/img/face.jpeg" alt="조병현">조병현</a>
+            </li>
+            <li class="mem1"><a href="https://jaehyuk-lee-0712.github.io/class2024/" target="_blank"><img
+                        src="https://jaehyuk-lee-0712.github.io/class2024/assets/img/face.png" alt="이재혁">이재혁</a></li>
+            <li class="mem1"><a href="https://skadbstj12.github.io/class2024/" target="_blank"><img
+                        src="https://skadbstj12.github.io/class2024/assets/img/face.png" alt="남윤서">남윤서</a></li>
+            <li class="mem1"><a href="https://kimyih.github.io/class2024/" target="_blank"><img
+                        src="https://kimyih.github.io/class2024/assets/img/FACE.png" alt="김이현">김이현</a>
+            </li>
+            <li class="mem1"><a href="https://parksohyunnn.github.io/class2024/" target="_blank"><img
+                        src="https://parksohyunnn.github.io/class2024/assets/img/face.png" alt="박소현">박소현</a></li>
+            <li class="mem1"><a href="https://rkdrudals0611.github.io/class-2024/" target="_blank"><img
+                        src="https://rkdrudals0611.github.io/class-2024/assets/img/face.png" alt="강경민">강경민</a></li>
+            <li class="mem1"><a href="https://an83690880.github.io/class2024/" target="_blank"><img
+                        src="https://an83690880.github.io/class2024/assets/img/face.png" alt="안지은">안지은</a></li>
+        </ul>
+    </div>
+
+    <!-- members -->
 
     <div class="layer_wrap" id="infoLayer" style="display: none;">
         <div class="layer__inner">
@@ -128,6 +186,7 @@
                             <li><img src="assets/intro/intro08.jpg" alt="소개8"></li>
                         </ul>
                     </div>
+
                 </div>
                 <div class="layer__footer"></div>
             </div>
@@ -145,6 +204,107 @@
                 layer.style.display = "none"; // 레이어를 숨김
             }
         });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        console.clear();
+
+        const images = document.querySelectorAll(".draggableIcon");
+
+        images.forEach(image => {
+            let isDown = false;
+            let innerImage = image.children[0];
+            image.addEventListener("mousedown", e => {
+                console.log("Event")
+                isDown = true;
+                image.style.cursor = "grabbing";
+
+                scaleImageBackground(innerImage, isDown);
+                scaleImage(innerImage, isDown);
+                mousedown(e, image);
+            });
+
+            image.addEventListener("mouseup", () => {
+                isDown = false;
+                image.style.cursor = "grab";
+                scaleImageBackground(innerImage, isDown);
+                scaleImage(innerImage, isDown);
+            });
+        });
+
+        function mousedown(e, image) {
+            window.addEventListener("mousemove", mousemove);
+            window.addEventListener("mouseup", mouseup);
+
+            e.target.parentElement.style.zIndex = 10;
+            images.forEach(i => {
+                if (i != e.target.parentElement) {
+                    i.style.zIndex = 1;
+                }
+            });
+
+            let prevX = e.clientX;
+            let prevY = e.clientY;
+
+            function mousemove(e) {
+                let newX = prevX - e.clientX;
+                let newY = prevY - e.clientY;
+                moveImage(image, { x: newX, y: newY });
+                prevX = e.clientX;
+                prevY = e.clientY;
+            }
+            function mouseup() {
+                window.removeEventListener("mousemove", mousemove);
+                window.removeEventListener("mouseup", mouseup);
+            }
+        }
+
+        function scaleImageBackground(image, mouseDownState) {
+            let duration = 0.45;
+            if (mouseDownState) {
+                gsap.to(image, duration, {
+                    backgroundSize: "150%",
+                    ease: "power3.out",
+                });
+            } else {
+                gsap.to(image, duration, {
+                    backgroundSize: "120%",
+                    ease: "power3.out",
+                });
+            }
+        }
+
+        function scaleImage(image, mouseDownState) {
+            let duration = 0.45;
+            if (mouseDownState) {
+                gsap.to(image, duration, {
+                    scale: 0.85,
+                    ease: "power3.out",
+                });
+            } else {
+                gsap.to(image, duration, {
+                    scale: 1,
+                    ease: "power3.out",
+                });
+            }
+        }
+
+        function moveImage(image, mousePosition) {
+
+            let currentLeft = parseFloat(window.getComputedStyle(image).left);
+            let currentTop = parseFloat(window.getComputedStyle(image).top);
+
+            let newPosition = {
+                left: currentLeft - mousePosition.x,
+                top: currentTop - mousePosition.y,
+            };
+            gsap.to(image, 0, {
+                top: `${newPosition.top}px`,
+                left: `${newPosition.left}px`,
+                ease: "power3.out",
+            });
+        }
+
     </script>
 </body>
 

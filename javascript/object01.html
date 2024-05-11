@@ -38,37 +38,410 @@
     <main id="main">
         <div class="main__menu container">
             <ul>
-                <li><a href="#">01. if문</a></li>
+                <li><a href="#sample01">01. <em>at()</em> : 지정된 숫자 (index)를 받아, 문자열에서 해당되는 index의 요소를 반환</a></li>
+                <li><a href="#">02. <em>charAt()</em> 메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환합니다.</a></li>
+                <li><a href="#">03. <em>charCodeAt()</em> 메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 정수 값을 반환합니다.</a>
+                </li>
+                <li><a href="#">04. <em>codePointAt()</em> 메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 포인트 정수 값을
+                        반환합니다.</a></li>
+                <li><a href="#">05. <em>concat()</em> 메서드는 매개변수로 전달된 문자열을 받아, 결합된 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">06. <em>includes()</em>💛 메서드는 문자열 포함 여부를 검색하여, 불린(true, false)을 반환합니다.</a></li>
+                <li><a href="#">07. <em>indexOf()</em>💛 메서드는 문자열을 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</a></li>
+                <li><a href="#">08. <em>lastIndexOf()</em> 메서드는 문자열을 역순으로 검색하여, 주어진 값과 일치하는 첫 번째 위치값(index)을 반환합니다.</a>
+                </li>
+                <li><a href="#">09. <em>localeCompare()</em> 메서드는 문자열과 문자열을 비교하여, 수치(음수, 양수, 0)을 반환합니다.</a></li>
+                <li><a href="#">10. <em>match()</em>💛 메서드는 문자열(정규식)을 검색하고, 문자열(배열)을 반환합니다.</a></li>
+                <li><a href="#">11. <em>matchAll()</em> 메서드는 문자열(정규식)을 검색하고, 일치하는 모든 문자열(배열)을 반환합니다.</a></li>
+                <li><a href="#">12. <em>normalize()</em> 메서드는 주어진 문자열을 정규화된 형태로 반환합니다.</a></li>
+                <li><a href="#">13. <em>padEnd()</em> 메서드는 주어진 길이에 맞게 뒤 문자열을 채우고, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">14. <em>padStart()</em> 메서드는 주어진 길이에 맞게 앞 문자열을 채우고, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">15. <em>repeat()</em> 메서드는 주어진 횟수만큼 반복 복사하여, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">16. <em>replace()</em>💛 메서드는 문자열에서 특정 문자열을 교체하여, 새로은 문자열을 반환합니다.</a></li>
+                <li><a href="#">17. <em>replaceAll()</em> 메서드는 문자열에서 특정 문자열을 모두 교체하여, 새로은 문자열을 반환합니다.</a></li>
+                <li><a href="#">18. <em>search()</em>💛 메서드는 문자열(정규식)을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
+                <li><a href="#">19. <em>slice()</em>💛💛 메서드는 문자열에서 시작 위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">20. <em>substring()</em>💛 메서드는 문자열에서 시작 위치에서 종료 위치 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">21. <em>substr()</em> 메서드는 문자열에서 시작 위치에서 길이 값을 추출하여, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">22. <em>split()</em>💛💛💛 메서드는 문자열을 구분자로 구분하고, 여러 개의 문자열(배열)을 반환합니다.</a></li>
+                <li><a href="#">23. <em>startsWith()</em> 메서드는 시작하는 문자열에서 특정 문자열로 시작하는 확인하여, 그 결과를 불린(true, false)로
+                        반환합니다.</a></li>
+                <li><a href="#">24. <em>endsWith()</em> 메서드는 끝나는 문자열에서 특정 문자열로 끝나는지 확인하여, 그 결과를 불린(true, false)로
+                        반환합니다.</a></li>
+                <li><a href="#">25. <em>toLocaleLowerCase()</em> 메서드는 문자열을 소문자로 설정하고, 로케일 소문자 문자열을 반환합니다.</a></li>
+                <li><a href="#">26. <em>toLocaleUpperCase()</em> 메서드는 문자열을 대문자로 설정하고, 로케일 대문자 문자열을 반환합니다.</a></li>
+                <li><a href="#">27. <em>toLowerCase()</em> 메서드는 문자열을 소문자로 설정하고, 소문자 문자열을 반환합니다.</a></li>
+                <li><a href="#">28. <em>toUpperCase()</em> 메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
+                <li><a href="#">29. <em>toString()</em> 메서드는 데이터를 문자열로 변환하고, 문자열을 반환합니다.</a></li>
+                <li><a href="#">30. <em>trim()</em>💛 메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">31. <em>trimEnd()</em> 메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">32. <em>trimStart()</em> 메서드는 문자열의 앞 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
+                <li><a href="#">33. <em>valueOf()</em> 메서드는 객체의 원시값을 반환합니다.</a></li>
             </ul>
         </div>
         <!-- main__menu -->
 
         <div class="main__sample container">
             <div id="sample01" class="sample">
-                <h3>01. if문(조건식)</h3>
-                <p>
-                    if문은 주어진 조건식이 참이면 특정 코드를 실행하고, 거짓이면 다른 코드를 실행합니다.
+                <h3>01. at()</h3>
+                <p class="notice">
+                    "문자열".at(위치값)
                 </p>
-                <pre><code>{
-    //true "문자열" 숫자 [] {}
-    //false ""(빈문자열) 0 null undefined
-
-    if ("조건") {
-        console.log("실행되었습니다.(true)");
-    } else {
-        console.log("실행되었습니다.(false)");
-    }
-}</code></pre>
+                <ul>
+                    <li>지정한 숫자(index)를 받아 , 문자열에서 해당되는 인덱스의 요소를 반환합니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                    <li>문자열의 길이보다 큰 인덱스를 지정하면 undefined가 발생합니다.</li>
+                    <li>음수인 경우 문자열의 오른쪽에서부터 인덱스를 처리합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+    "javascript reference".at()       //j
+    "javascript reference".at(0)      //j
+    "javascript reference".at(1)      //a
+    "javascript reference".at(2)      //v
+    "javascript reference".at(3)      //a
+    "javascript reference".at(4)      //s
+    "javascript reference".at(5)      //c
+    "javascript reference".at(-1)     //e
+    "javascript reference".at(-2)     //c
+    "javascript reference".at(-3)     //n
+    "javascript reference".at(-4)     //e
+    "javascript reference".at(-5)     //r
+    "javascript reference".at(100)    // undefined
+}
+</code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            실행되었습니다.(true)<br />
                         </div>
                     </details>
                 </div>
             </div>
 
+            <div id="sample06" class="sample">
+                <h3>06. includes()</h3>
+                <p class="notice">
+                    "문자열".includes(찾을 문자열)
+                </p>
+                <ul>
+                    <li>지정한 문자열이 해당 문자열에 포함되어 있는지 확인합니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                    <li>문자열에 포함되어 있으면 true를 반환하고, 그렇지 않으면 false를 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+    "javascript reference".includes("javascript")   // true
+    "javascript reference".includes("reference")    // true
+    "javascript reference".includes("script")       // false
+    "javascript reference".includes("JavaScript")   // false
+}
+                </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample07" class="sample">
+                <h3>07. indexOf()</h3>
+                <p class="notice">
+                    "문자열".indexOf(대상문자열)
+                </p>
+                <ul>
+                    <li>대상 문자열에서 첫 번째로 발견된 인덱스를 반환합니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                    <li>대상 문자열이 없으면 -1을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".indexOf("j")    //0
+                "javascript reference".indexOf("a")    //1
+                "javascript reference".indexOf("v")    //2
+                "javascript reference".indexOf("s")    //4
+                "javascript reference".indexOf("c")    //5
+                "javascript reference".indexOf("e")    //17
+                "javascript reference".indexOf("n")    //14
+                "javascript reference".indexOf("r")    //15
+                "javascript reference".indexOf("x")    //-1
+}
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0 <br />
+                            1 <br />
+                            2 <br />
+                            4 <br />
+                            5 <br />
+                            17 <br />
+                            14 <br />
+                            15 <br />
+                            -1
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample10" class="sample">
+                <h3>10. match()</h3>
+                <p class="notice">
+                    "문자열".match(정규식)
+                </p>
+                <ul>
+                    <li>정규식과 일치하는 문자열을 반환합니다.</li>
+                    <li>처음으로 일치하는 부분만 반환하며, 전역 플래그(g)를 사용하면 모든 일치하는 부분을 반환합니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                    <li>일치하는 부분이 없으면 null을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".match(/j/)       //["j"]
+                "javascript reference".match(/a/)       //["a"]
+                "javascript reference".match(/v/)       //["v"]
+                "javascript reference".match(/s/)       //["s"]
+                "javascript reference".match(/c/)       //["c"]
+                "javascript reference".match(/e/)       //["e"]
+                "javascript reference".match(/n/)       //["n"]
+                "javascript reference".match(/r/)       //["r"]
+                "javascript reference".match(/x/)       //null
+            }
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["j"] <br>
+                            ["a"] <br>
+                            ["v"] <br>
+                            ["s"] <br>
+                            ["c"] <br>
+                            ["e"] <br>
+                            ["n"] <br>
+                            ["r"] <br>
+                            null
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample16" class="sample">
+                <h3>16. replace()</h3>
+                <p class="notice">
+                    "문자열".replace(찾을문자열 또는 정규식, 대체할문자열)
+                </p>
+                <ul>
+                    <li>첫 번째로 일치하는 부분을 대체할 문자열로 변경합니다.</li>
+                    <li>정규식을 사용하여 대체할 수 있습니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".replace("j", "J")    //"Javascript reference"
+                "javascript reference".replace(/a/g, "A")   //"jAvAscript reference"
+                "javascript reference".replace("v", "")     //"javascript reference"
+                "javascript reference".replace(/s/, "S")    //"javScript reference"
+                "javascript reference".replace("x", "X")    //"javascript reference"
+            }
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "Javascript reference" <br>
+                            "jAvAscript reference" <br>
+                            "javascript reference" <br>
+                            "javScript reference" <br>
+                            "javascript reference"
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+
+            <div id="sample18" class="sample">
+                <h3>18. search()</h3>
+                <p class="notice">
+                    "문자열".search(정규식)
+                </p>
+                <ul>
+                    <li>정규식과 일치하는 부분의 첫 번째 인덱스를 반환합니다.</li>
+                    <li>대소문자를 구별합니다.</li>
+                    <li>일치하는 부분이 없으면 -1을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+    "javascript reference".search(/j/)     //0
+    "javascript reference".search(/a/)     //1
+    "javascript reference".search(/v/)     //2
+    "javascript reference".search(/s/)     //4
+    "javascript reference".search(/c/)     //5
+    "javascript reference".search(/e/)     //17
+    "javascript reference".search(/n/)     //14
+    "javascript reference".search(/r/)     //15
+    "javascript reference".search(/x/)     //-1
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0 <br>
+                            1 <br>
+                            2 <br>
+                            4 <br>
+                            5 <br>
+                            17 <br>
+                            14 <br>
+                            15 <br>
+                            -1 <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample19" class="sample">
+                <h3>19. slice()</h3>
+                <p class="notice">
+                    "문자열".slice(시작인덱스, 종료인덱스)
+                </p>
+                <ul>
+                    <li>시작 인덱스부터 종료 인덱스까지의 부분 문자열을 반환합니다.</li>
+                    <li>종료 인덱스는 반환되는 문자열에 포함되지 않습니다.</li>
+                    <li>음수 값은 문자열의 끝에서부터의 거리를 나타냅니다.</li>
+                    <li>시작 인덱스가 종료 인덱스보다 큰 경우 빈 문자열을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".slice(0, 4)     //"java"
+                "javascript reference".slice(4, 10)    //"script"
+                "javascript reference".slice(-10)      //"reference"
+                "javascript reference".slice(10, 4)    //""
+            }
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "java" <br>
+                            "script" <br>
+                            "reference" <br>
+                            ""
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample20" class="sample">
+                <h3>20. substring()</h3>
+                <p class="notice">
+                    "문자열".substring(시작인덱스, 종료인덱스)
+                </p>
+                <ul>
+                    <li>시작 인덱스부터 종료 인덱스 전까지의 부분 문자열을 반환합니다.</li>
+                    <li>음수 값은 0으로 처리됩니다.</li>
+                    <li>종료 인덱스가 생략되면 문자열의 끝까지 반환됩니다.</li>
+                    <li>시작 인덱스가 종료 인덱스보다 큰 경우 두 인덱스가 교환되어 동작합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".substring(0, 4)     //"java"
+                "javascript reference".substring(4, 10)    //"script"
+                "javascript reference".substring(10)       //"reference"
+                "javascript reference".substring(10, 4)    //"script"
+            }
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "java" <br>
+                            "script" <br>
+                            "reference" <br>
+                            "script" <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample21" class="sample">
+                <h3>21. substr()</h3>
+                <p class="notice">
+                    "문자열".substr(시작인덱스, 길이)
+                </p>
+                <ul>
+                    <li>시작 인덱스부터 지정한 길이만큼의 부분 문자열을 반환합니다.</li>
+                    <li>음수 값을 가질 경우 문자열의 끝에서부터의 거리로 처리됩니다.</li>
+                    <li>길이가 생략되면 시작 인덱스부터 문자열 끝까지 반환됩니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".substr(0, 4)      //"java"
+                "javascript reference".substr(4, 6)      //"script"
+                "javascript reference".substr(10)        //"reference"
+                "javascript reference".substr(-10)       //"reference"
+            }
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "java" <br>
+                            "script" <br>
+                            "reference" <br>
+                            "reference"
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample22" class="sample">
+                <h3>22. split()</h3>
+                <p class="notice">
+                    "문자열".split(구분자)
+                </p>
+                <ul>
+                    <li>구분자를 기준으로 문자열을 나누어 배열로 반환합니다.</li>
+                    <li>구분자가 생략되면 문자열 전체를 단일 요소로 하는 배열을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "javascript reference".split(" ")      //["javascript", "reference"]
+                "javascript,reference".split(",")      //["javascript", "reference"]
+                "javascript reference".split("")       //["j", "a", "v", "a", "s", "c", "r", "i", "p", "t", " ", "r", "e", "f", "e", "r", "e", "n", "c", "e"]
+}
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["javascript", "reference"] <br>
+                            ["javascript", "reference"] <br>
+                            ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t", " ", "r", "e", "f", "e", "r", "e",
+                            "n","c", "e"]
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="sample30" class="sample">
+                <h3>30. trim()</h3>
+                <p class="notice">
+                    "문자열".trim()
+                </p>
+                <ul>
+                    <li>문자열의 양 끝에서 공백을 제거한 문자열을 반환합니다.</li>
+                </ul>
+                <pre><code class="javascript">{
+                "   javascript reference   ".trim()      //"javascript reference"
+                "   hello world   ".trim()               //"hello world"
+                "  example   ".trim()                    //"example"
+}
+            </code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "javascript reference" <br>
+                            "hello world" <br>
+                            "example"
+                        </div>
+                    </details>
+                </div>
+            </div>
         </div>
         <!-- main__sample -->
 

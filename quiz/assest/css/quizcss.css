@@ -167,6 +167,7 @@ body::after {
     /* align-items: center; */
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .quiz__wrap .quiz {
@@ -179,7 +180,6 @@ body::after {
 
 .quiz__header {
     color: #696969;
-    margin-bottom: 20px;
 }
 
 .quiz__main .question {

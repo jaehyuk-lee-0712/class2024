@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인 기능사 D-2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo"><a href="#">서울구석구석</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">지금의 서울</a>
+                        <ul>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">축제 & 행사</a></li>
+                            <li><a href="#">전시</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">추천</a>
+                        <ul>
+                            <li><a href="#">에디터 추천</a></li>
+                            <li><a href="#">테마코스</a></li>
+                            <li><a href="#">도보해설관광</a></li>
+                            <li><a href="#">한류관광</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">여행지</a>
+                        <ul>
+                            <li><a href="#">명소</a></li>
+                            <li><a href="#">엔터테인먼트</a></li>
+                            <li><a href="#">음식</a></li>
+                            <li><a href="#">게스트하우스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">여행정보</a>
+                        <ul>
+                            <li><a href="#">가이드북 & 지도</a></li>
+                            <li><a href="#">시티투어버스</a></li>
+                            <li><a href="#">날씨</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- // header end -->
+
+        <main id="main">
+            <section class="content">
+                <div class="sliders">
+                    <div class="sliderWrap">
+                        <div class="slider s1">
+                            <h2>서울 불꽃 축제 개최 안내</h2>
+                            <p>서울 불꽃 축제를 개최합니다.</p>
+                        </div>
+                        <div class="slider s2">
+                            <h2>서울시 시장 긴급 기자회견 안내</h2>
+                            <p>서울시 시장 관련 사건 기자회견 안내드립니다.</p>
+                        </div>
+                        <div class="slider s3">
+                            <h2>서울 현대 미술관 특별 전시회 개최 안내</h2>
+                            <p>현대미술관 봄꽃 축제를 개최합니다</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="banner__text">
+                        <h3>서울의 거리</h3>
+                        <p>서울에 초대합니다.</p>
+                        <a href="#">클릭하기</a>
+                    </div>
+                </div>
+            </section>
+            <section class="info">
+                <div class="notice">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="#">문화 행사 공지</a><span>2024.04.25</span></li>
+                        <li><a href="#">공공하수도 관리대행 성과평가 결과 공고</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울역사박물관 어린이날 큰잔치 행사 개최</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울 시장 교체 안내</a><span>2024.04.25</span></li>
+                        <li><a href="#">서울 시장 기자회견 안내</a><span>2024.04.25</span></li>
+                    </ul>
+
+                </div>
+                <div class="gallery">
+                    <h3>서울 구석 갤러리</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/galleryD1.png" alt="서울 풍경">
+                                <span>서울 풍경</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="img/galleryD2.png" alt="서울 거리">
+                                <span>서울 거리</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <img src="img/galleryD3.png" alt="서울의 일상">
+                                <span>서울의 일상</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+        <!-- // main end -->
+
+        <footer id="footer">
+            <div class="title">
+                <h1 class="footer_logo"><a href="#">서울구석구석</a></h1>
+            </div>
+            <div class="copy">
+                <span>모든 저작권은 이 사이트의 제작자, 관리자에게 있습니다.</span>
+            </div>
+            <div class="family">
+                <select id="family__site">
+                    <option value="경기도">경기도</option>
+                    <option value="경상도">경상도</option>
+                    <option value="충청도">충청도</option>
+                </select>
+            </div>
+        </footer>
+        <!-- // footer end -->
+
+        <div class="modal">
+            <h4>서울 경마장 공사중</h4>
+            <p>
+                안녕하세요, 경마장 운영팀입니다. 경마장 티켓 예매 일정에 변경이 있어 안내드립니다.
+                기존 예매 일정에 따르면 6월 1일부터 6월 30일까지 티켓 예매가 가능하였으나, 운영상의 문제로 일정이 변경되었습니다.
+            </p>
+            <a href="#" class="popup-close">닫기</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+
+        //모달
+        $(".notice>ul>li:first-child").click(function () {
+            $(".modal").show();
+        })
+
+        $(".popup-close").click(function () {
+            $(".modal").hide()
+        })
+
+        // 메뉴
+        $(".nav>ul>li").mouseover(function () {
+            $(this).find(">ul").stop().slideDown();
+        })
+
+        $(".nav>ul>li").mouseout(function () {
+            $(this).find(">ul").stop().slideUp();
+        })
+
+
+        let currentIdx = 0;
+        $(".sliderWrap").append($(".slider").first().clone(true));
+
+        setInterval(() => {
+            console.log("###")
+            currentIdx++;
+
+            $(".sliderWrap").animate({ marginTop: -400 * currentIdx + "px" }, 600);
+
+            if (currentIdx == 3) {
+                setTimeout(() => {
+                    $(".sliderWrap").animate({ marginTop: 0 }, 0)
+                    currentIdx = 0;
+                }, 700)
+            }
+        }, 1000)
+
+        // let picIdx = 0;
+        // setInterval(() => {
+        //     let nextIdx = (picIdx + 1) % 3;
+
+        //     $(".slider").eq(picIdx).fadeOut(1000);
+        //     $(".slider").eq(nextIdx).fadeIn(1000);
+
+        //     picIdx = nextIdx;
+        // }, 3000)
+
+    </script>
+</body>
+
+</html>

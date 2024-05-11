@@ -64,3 +64,9 @@ Material icon : 아이콘 설정
 [각종 애니메이션 등, css 효과 모음 사이트](https://wsss.tistory.com/)
 [각종 애니메이션 등, css 효과 모음 사이트2](https://wiss.tistory.com/)
 [폰트 모음 사이트(폰트 어썸)](https://wess.tistory.com/)
+[https://docs.emmet.io/cheat-sheet/](https://docs.emmet.io/cheat-sheet/)
+[linear-gradient](https://webzz.tistory.com/380)
+[웹폰트변환사이트](https://transfonter.org/)
+[미리캔버스_디자인_참고](https://www.miricanvas.com/)
+
+[폰트참고](https://pangrampangram.com/)

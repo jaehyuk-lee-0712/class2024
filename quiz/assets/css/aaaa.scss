@@ -1,0 +1,41 @@
+@import url('reset');
+@import url('adsfasdf');
+
+$asdf: #ffffff;
+$color1: #ffffff;
+$color2: #000000;
+
+@mixin fxr($ai,$jc){
+    display: flex;
+    flex-direction: row;
+    align-items: $ai;
+    justify-content: $jc;
+}
+@mixin fxc($ai,$jc){
+    display: flex;
+    flex-direction: column;
+    align-items: $ai;
+    justify-content: $jc;
+}
+#faa{
+    #fxa{
+        color: $asdf;
+        .cls {
+            color: aqua;
+            @include fxr(center,center);
+            @include fxc(center,center);
+            &:hover {
+                color: aquamarine;
+            }
+            &::before {
+                color: red;
+            }
+            &::after {
+                color: green;
+            }
+        }
+    }
+    &::after {
+        color: beige;
+    }
+}

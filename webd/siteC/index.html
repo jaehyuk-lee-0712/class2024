@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>C-3</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h2 class="logo"></h2>
+            <nav class="nav">
+                <ul class="menu">
+                    <li><a href="#">협회소개</a>
+                        <ul class="submeun s1">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">명인</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">행사안내</a>
+                        <ul class="submeun s2">
+                            <li><a href="#">요리경연대회</a></li>
+                            <li><a href="#">전시참가</a></li>
+                            <li><a href="#">참가신청</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">홍보마당</a>
+                        <ul class="submeun s3">
+                            <li><a href="#">축제소식</a></li>
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">레시피</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">회원마당</a>
+                        <ul class="submeun s4">
+                            <li><a href="#">Q&A</a></li>
+                            <li><a href="#">사진갤러리</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mainContent">
+            <div id="slide">
+                <div class="sliderWrap">
+                    <div class="slider">
+                        <div class="text">
+                            <h3>신선한 재료만을 고집합니다.</h3>
+                            <p>##########</p>
+                        </div>
+                        <a href="#"><img src="img/sc1.png" alt="이미지1"></a>
+                    </div>
+                    <div class="slider">
+                        <div class="text">
+                            <h3>신선한 재료만을 고집합니다.</h3>
+                            <p>##########</p>
+                        </div>
+                        <a href="#"><img src="img/sc2.png" alt="이미지2"></a>
+                    </div>
+                    <div class="slider">
+                        <div class="text">
+                            <h3>신선한 재료만을 고집합니다.</h3>
+                            <p>##########</p>
+                        </div>
+                        <a href="#"><img src="img/sc3.png" alt="이미지3"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        let picIdx = 0;
+
+        $(".sliderWrap").append($(".slider").first().clone(true));
+
+        setInterval(function () {
+            picIdx++;
+            $(`.sliderWra1`).animate({ marginLeft: -picIdx * 100 + "%" }, 500);
+            if (picIdx == 3) {
+                setTimeout(function () {
+                    $("sliderWrap").animate({ marginLeft: 0 }, 0);
+                    picIdx = 0;
+                })
+            }
+        }, 1000);
+
+        $(".menu>li").mouseover(function () {
+            $(this).find("ul").fadeIn(300);
+        })
+
+        $(".menu>li").mouseout(function () {
+            $(this).find("ul").fadeOut(300);
+        })
+
+    </script>
+</body>
+
+</html>

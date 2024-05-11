@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+KR&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+}
+
+body-bg2 {
+    background-color: #dcb8b8;
+}
+
+body-bg5 {
+    background-color: #000;
+}
+
+/* header */
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.header__inner {
+    padding: 20px;
+    position: relative;
+}
+
+.header__inner .link {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.header__inner .link a {
+    font-weight: 500;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    background-image: url(../svg/arrow3.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 16px;
+    color: #fff;
+
+}
+
+.header__inner h1 {}
+
+.header__inner h1 a {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.header__inner h1 em {
+    font-style: normal;
+    font-weight: 300;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-size: 38px;
+    line-height: 1;
+}
+
+.header__inner p {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 300;
+    color: #956b6b;
+}
+
+
+/* footer */
+
+.footer__inner {
+    display: block;
+}
+
+.footer__inner nav {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+.footer__inner nav ul {
+    display: flex;
+}
+
+.footer__inner nav li a {
+    margin-right: 5px;
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer__inner nav li a.active {
+    text-emphasis: circle;
+}

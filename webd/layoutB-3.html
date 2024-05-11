@@ -13,6 +13,15 @@
             padding: 9;
         }
 
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        li {
+            list-style: none;
+        }
+
         #wrap {
             width: 100%;
         }
@@ -35,10 +44,9 @@
             background-color: #21546bf3;
         }
 
-        #header .header-container .nav {
+        #header .header-container #nav {
             width: 80%;
             height: 100px;
-            background-color: #47c5fff3;
         }
 
         #slider {
@@ -109,6 +117,41 @@
             height: 100px;
             background-color: #2e3612;
         }
+
+        #nav {}
+
+        #nav>ul {
+            display: flex;
+            justify-content: right;
+        }
+
+        #nav>ul>li {}
+
+        #nav>ul>li>a {
+            display: inline-block;
+            padding: 10px 50px;
+            margin-top: 60px;
+            background-color: #dedede;
+
+        }
+
+        #nav>ul>li>ul {
+            display: block;
+        }
+
+        #nav>ul>li>ul {}
+
+        #nav>ul>li>ul>li {
+            text-align: center;
+        }
+
+        #nav>ul>li>ul>li>a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #dedede;
+            color: #fff;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -117,7 +160,42 @@
         <header id="header">
             <div class="header-container">
                 <h1 class="logo"></h1>
-                <nav class="nav"></nav>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#">MENU-1</a>
+                            <ul>
+                                <li><a href="#">SideMENU-1</a></li>
+                                <li><a href="#">SideMENU-2</a></li>
+                                <li><a href="#">SideMENU-3</a></li>
+                                <li><a href="#">SideMENU-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU-2</a>
+                            <ul>
+                                <li><a href="#">SideMENU-1</a></li>
+                                <li><a href="#">SideMENU-2</a></li>
+                                <li><a href="#">SideMENU-3</a></li>
+                                <li><a href="#">SideMENU-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU-3</a>
+                            <ul>
+                                <li><a href="#">SideMENU-1</a></li>
+                                <li><a href="#">SideMENU-2</a></li>
+                                <li><a href="#">SideMENU-3</a></li>
+                                <li><a href="#">SideMENU-4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">MENU-4</a>
+                            <ul>
+                                <li><a href="#">SideMENU-1</a></li>
+                                <li><a href="#">SideMENU-2</a></li>
+                                <li><a href="#">SideMENU-3</a></li>
+                                <li><a href="#">SideMENU-4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <!-- //header -->

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h2 class="logo"><a href="#">역사 박물관</a></h2>
+            <nav class="nav">
+                <ul id="menuBar">
+                    <li><a href="#">박물관 소개</a>
+                        <ul class="sub__menu">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">박물관연혁</a></li>
+                            <li><a href="#">유물현황</a></li>
+                            <li><a href="#">관람안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전시</a>
+                        <ul class="sub__menu">
+                            <li><a href="#">선사시대</a></li>
+                            <li><a href="#">삼국시대</a></li>
+                            <li><a href="#">조선시대</a></li>
+                            <li><a href="#">근대시대</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">연구</a>
+                        <ul class="sub__menu">
+                            <li><a href="#">생활유적</a></li>
+                            <li><a href="#">분묘유적</a></li>
+                            <li><a href="#">생산유적</a></li>
+                            <li><a href="#">통신유적</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">교육</a>
+                        <ul class="sub__menu">
+                            <li><a href="#">문화행사</a></li>
+                            <li><a href="#">진로체험</a></li>
+                            <li><a href="#">외부교육</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="info">
+            <div id="notice">
+                <h2 class="notice__title"><a href="#">공지사항</a></h2>
+                <nav class="notice__list">
+                    <ul>
+                        <li><a href="#">공지합니다.1</a><span>2024.04.26</span></li>
+                        <li><a href="#">공지합니다.2</a><span>2024.04.26</span></li>
+                        <li><a href="#">공지합니다.3</a><span>2024.04.26</span></li>
+                        <li><a href="#">공지합니다.4</a><span>2024.04.26</span></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="gallery">
+                <h2 class="gallery__title"><a href="#">갤러리</a></h2>
+                <div class="gallery__info">
+                    <div class="gallery__img"></div>
+                    <div class="gallery__img"></div>
+                    <div class="gallery__img"></div>
+                </div>
+            </div>
+            <div id="banner">
+                <div class="banner_img"></div>
+                <div class="banner_img"></div>
+                <div class="banner_img"></div>
+                <div class="banner_img"></div>
+            </div>
+        </div>
+        <main id="main">
+            <div class="sliderWrap">
+                <div class="slider">
+                    <img src="img/sliderE1.png" alt="이미지1">
+                    <span>우리가 함께하는 박물관</span>
+                </div>
+                <div class="slider">
+                    <img src="img/sliderE2.png" alt="이미지2">
+                    <span>우리가 함께하는 박물관</span>
+                </div>
+                <div class="slider">
+                    <img src="img/sliderE3.png" alt="이미지3">
+                    <span>우리가 함께하는 박물관</span>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer__logo"><a href="#">역사 박물관</a></div>
+            <div class="copy">
+                <p>이 사이틔 모든 저작권은 본 사이트의 제작자, 관리자, 소유자가 가지고 있으며 상업 목적을 위한 불법 도용을 금합니다,</p>
+            </div>
+            <div class="family">
+                <select name="familySite" id="familySite">
+                    <option value="1">사과 박물관</option>
+                    <option value="1">만화 박물관</option>
+                    <option value="1">게임 박물관</option>
+                </select>
+            </div>
+        </footer>
+        <div id="modal">
+            <h2 class="modal__title"><a href="#">박람회 안내</a></h2>
+            <p>
+                저희 역사박물관의 명물인 삼국시대의 명장, 척준경의 검이 돌아오는 5월,
+                전시됩니다. 고객 여러분들의 많은 관심 부탁드립니다.
+            </p>
+            <a href="#" class="modal__close">닫기</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // 메뉴바
+        $("#menuBar>li").mouseover(function () {
+            $(this).find(".sub__menu").stop().fadeIn(200)
+        })
+
+        $("#menuBar>li").mouseout(function () {
+            $(this).find(".sub__menu").stop().fadeOut(200)
+        })
+
+        // slider 
+        let currentIdx = 0;
+        $(".sliderWrap").append($(".slider").eq(1).clone(true));
+        setInterval(function () {
+            currentIdx++
+            $(".sliderWrap").animate({ marginTop: -currentIdx * 650 + "px" }, 600)
+
+            setTimeout(function () {
+                if (currentIdx == 3) {
+                    $(".sliderWrap").animate({ marginTop: 0 }, 0);
+                    currentIdx = 0;
+                }
+            }, 100)
+
+        }, 3000)
+
+        $(".notice__list>ul>li:nth-child(1)").click(function () {
+            $("#modal").show();
+        })
+
+        $(".modal__close").click(function () {
+            $("#modal").hide();
+        })
+    </script>
+</body>
+
+</html>
