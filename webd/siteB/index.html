@@ -167,13 +167,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
     // 이미지 슬라이드
-    let currentIndex = 0;   // 현재 이미지
+    let currentIndex = 0;   
     const sliderWrap = document.querySelector(".sliderWrap");
     const sliders = document.querySelectorAll(".slider");
     sliderWrap.appendChild(sliders[0].cloneNode(true));
 
     setInterval(function() {
-        currentIndex++;     // 현재 이미지를 1씩 증가
+        currentIndex++;    
         sliderWrap.style.transition = "margin-left 0.6s ease-in-out";
         sliderWrap.style.marginLeft = -1200 * currentIndex + "px";
 
@@ -192,13 +192,13 @@ const submenus = document.querySelectorAll(".nav > ul > li > .submenu");
 navItems.forEach(function(navItem) {
     navItem.addEventListener("mouseover", function() {
         submenus.forEach(function(submenu) {
-            submenu.style.display = "block"; // 모든 하위 메뉴를 보이도록 설정합니다.
+            submenu.style.display = "block"; 
         });
         document.querySelector("#header .container").classList.add("on");
     });
     navItem.addEventListener("mouseout", function() {
         submenus.forEach(function(submenu) {
-            submenu.style.display = "none"; // 모든 하위 메뉴를 숨기도록 설정합니다.
+            submenu.style.display = "none"; 
         });
         document.querySelector("#header .container").classList.remove("on");
     });
