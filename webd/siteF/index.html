@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="header__container">
+                <h2 class="logo"><a href="#">하이글로벌컴퍼니</a></h2>
+                <nav class="nav">
+                    <ul id="menu">
+                        <li><a href="#">회사소개</a>
+                            <ul class="subMenu">
+                                <li><a href="#">CEO 인사말</a></li>
+                                <li><a href="#">기업문화</a></li>
+                                <li><a href="#">경영방침</a></li>
+                                <li><a href="#">회사연혁</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">사업소개</a>
+                            <ul class="subMenu">
+                                <li><a href="#">반도체 설비운영</a></li>
+                                <li><a href="#">건축 공사</a></li>
+                                <li><a href="#">UHP 배관 공사</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">회사활동</a>
+                            <ul class="subMenu">
+                                <li><a href="#">윤리경영</a></li>
+                                <li><a href="#">환경경영</a></li>
+                                <li><a href="#">안전보건경영</a></li>
+                                <li><a href="#">품질경영</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">인재채용</a>
+                            <ul class="subMenu">
+                                <li><a href="#">인재채용</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="sliders">
+            <div class="sliderWrap">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+            <div class="banner">
+                <ul class="links">
+                    <li>
+                        <div class="link"></div>
+                    </li>
+                    <li>
+                        <div class="link"></div>
+                    </li>
+                    <li>
+                        <div class="link"></div>
+                    </li>
+                    <li>
+                        <div class="link"></div>
+                    </li>
+                    <li>
+                        <div class="link"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contents">
+            <div class="contents__container">
+                <div id="contentsBanner"></div>
+                <div class="contentsWrap">
+                    <div class="notice">
+                        <h2 class="noticeText">공지사항<a href="#"></a></h2>
+                        <ul class="noticeList">
+                            <li><a href="#">공지사항입니다.1 </a><span>2024.05.10</span></li>
+                            <li><a href="#">공지사항입니다.2 </a><span>2024.05.10</span></li>
+                            <li><a href="#">공지사항입니다.3 </a><span>2024.05.10</span></li>
+                            <li><a href="#">공지사항입니다.4 </a><span>2024.05.10</span></li>
+                        </ul>
+                    </div>
+                    <div class="gallery">
+                        <h2 class="galleryText">갤러리</h2>
+                        <ul class="gallerys">
+                            <li>
+                                <div class="pic"></div>
+                            </li>
+
+                            <li>
+                                <div class="pic"></div>
+                            </li>
+
+                            <li>
+                                <div class="pic"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer__container">
+                <h2 class="logo"><a href="#">하이글로벌컴퍼니</a></h2>
+                <div class="copyright">
+                    <span>
+                        © 2024 Company Name. All rights reserved.
+                        이 저작물은 하이글로벌컴퍼니의 저작권으로 보호됩니다. 무단 복제, 배포, 전송 등은 저작권법에 의해 금지되어 있습니다.
+                    </span>
+                </div>
+                <!-- <select name="family" id="family">
+                    <option value="1">site1</option>
+                    <option value="2">site2</option>
+                    <option value="3">site3</option>
+                    <option value="4">site4</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let currentIdx = 0;
+            $(".sliderWrap").append($(".slide").first().clone(true));
+
+            setInterval(() => {
+                currentIdx++;
+
+                $(".sliderWrap").animate({ marginTop: -350 * currentIdx + "px" }, 600);
+
+                if (currentIdx == 3) {
+                    // setTimeout(() => {
+                    //     $(".sliderWrap").animate({ marginTop: 0 }, 0)
+                    //     currentIdx = 0;
+                    // }, 100)
+                    $(".sliderWrap").animate({ marginTop: 0 }, 0)
+                    currentIdx = 0;
+                }
+            }, 3000)
+
+            // 메뉴
+            $("#menu>li").mouseover(function () {
+                $(this).find(">ul").stop().slideDown();
+                $("#header").addClass("on")
+            })
+
+            $("#menu>li").mouseout(function () {
+                $(this).find(">ul").stop().slideUp();
+                $("#header").removeClass("on")
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
